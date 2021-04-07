@@ -4,7 +4,7 @@ export const data = {
       id: 0,
       name: 'John Mwangi',
       role: 'Computer Science Student at Northwestern University',
-      location: 'Evanston',
+      location: 'Evanston, IL',
       skills: ['Java', 'Python', 'Databases'],
       pic: 'null',
       Bio:
@@ -14,7 +14,7 @@ export const data = {
       id: 1,
       name: 'Adam',
       role: 'Computer Science Student at Stanford University',
-      location: 'San Francisco',
+      location: 'San Francisco, CA',
       skills: ['Golang', 'C++', 'Databases'],
       pic: 'null',
       Bio:
@@ -24,7 +24,7 @@ export const data = {
       id: 2,
       name: 'Josh',
       role: 'Computer Science Student at University of Chicago',
-      location: 'Chicago',
+      location: 'Chicago, IL',
       skills: ['JavaScript', 'Python', 'ML', 'Databases'],
       pic: 'null',
       Bio:
@@ -34,7 +34,7 @@ export const data = {
       id: 3,
       name: 'Mason',
       role: 'Computer Science Student at Northwestern University',
-      location: 'Evanston',
+      location: 'Evanston, IL',
       skills: ['Java', 'Python', 'React', 'Databases'],
       pic: 'null',
       Bio:
@@ -44,7 +44,7 @@ export const data = {
       id: 4,
       name: 'Evan',
       role: 'Computer Science Student at Northwestern University',
-      location: 'Evanston',
+      location: 'Evanston, IL',
       skills: ['React', 'JavaScript', 'Databases', 'Firebase'],
       pic: 'null',
       Bio:
@@ -54,7 +54,7 @@ export const data = {
       id: 5,
       name: 'Linus',
       role: 'Computer Science Student at Northwestern University',
-      location: 'Evanston',
+      location: 'Evanston, IL',
       skills: ['Java', 'Python', 'Databases'],
       pic: 'null',
       Bio:
@@ -64,7 +64,7 @@ export const data = {
       id: 6,
       name: 'Tiger',
       role: 'Computer Science Student at Northwestern University',
-      location: 'Evanston',
+      location: 'Evanston, IL',
       skills: ['Java', 'JavaScript', 'Python', 'ML', 'Databases'],
       pic: 'null',
       Bio:

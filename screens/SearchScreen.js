@@ -35,13 +35,16 @@ const SearchScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <SearchBar
-        placeholder="Search for skill/location..."
+        placeholder="Search for skills/location..."
         onChangeText={handleSearch}
         value={search}
         lightTheme={true}
       />
       <DeveloperList developers={developersShown} view={view} />
-      <StatusBar style="auto" />
+      <StatusBar 
+        style="auto"
+        hidden="false"
+        barStyle="dark-content" />
     </SafeAreaView>
   )
 }
@@ -51,11 +54,13 @@ const styles = StyleSheet.create({
     flex: 1,
     //alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 20,
+    paddingTop: 20
   },
   bannerStyle: {
-    color: '#888',
-    fontSize: 32,
+    alignItems: 'center',
+    color: 'white',
+    backgroundColor: '#cc0000ff',
+    fontSize: 28
   },
 })
 

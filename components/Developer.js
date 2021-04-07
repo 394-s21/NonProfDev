@@ -5,6 +5,7 @@ import { StyleSheet,
         TouchableOpacity, 
         View, 
         Dimensions } from 'react-native'
+import { BorderlessButton } from 'react-native-gesture-handler'
 
 // TODO: avatar/profile picture is currently hardcoded
 const Developer = ({ developer, view }) => {
@@ -29,10 +30,10 @@ const Developer = ({ developer, view }) => {
       }}
     />
     <View style={styles.developerInfo}>
-      <Text>{developer.name}</Text>
-      <Text>{developer.location}</Text>
-      <Text>{developer.role}</Text>
-      <Text>{developer.skills.join(', ')}</Text>
+      <Text style={styles.developerName}>{developer.name}</Text>
+      <Text style={styles.developerLocation}>{developer.location}</Text>
+      <Text style={styles.developerRole}>{developer.role}</Text>
+      <Text style={styles.developerSkills}>Skills: {developer.skills.join(', ')}</Text>
       
     </View>
   </TouchableOpacity>
@@ -58,6 +59,21 @@ const styles = StyleSheet.create({
   developerInfo : {
     flexDirection: 'column',
     flexShrink: 1
+  }, 
+  developerName: {
+    fontWeight: "bold", 
+    fontSize: 14
+  }, 
+  developerLocation: {
+    fontWeight: "300", 
+    fontSize: 13
+  }, 
+  developerRole: {
+    fontStyle: "italic",
+    fontSize: 13
+  },
+  developerSkills: {
+    fontSize: 13
   }
 })
 
