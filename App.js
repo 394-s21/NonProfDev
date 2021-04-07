@@ -3,21 +3,32 @@ import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
 import { SearchBar } from 'react-native-elements'
 import DeveloperList from './components/DeveloperList'
 import { data } from './utils/data'
+import { getFuse } from './utils/search'
 
-const SearchResultsScreen = () => {
+const SearchScreen = () => {
   const [search, updateSearch] = useState('')
 
   // Currently hardcoded data
-  const developers = data.developers
+  const [developers, setDevelopers] = useState(data.developers)
+
+  // Filtered list of developers
+  const [developersShown, setDevelopersShown] = useState(developers)
+
+  // Hacky search with fuse.js
+  const fuse = getFuse(developers)
+  const handleSearch = (search) => {
+    updateSearch(search)
+    setDevelopersShown(fuse.search(search).map((v) => v.item))
+  }
 
   return (
     <SafeAreaView>
       <SearchBar
-        placeholder="Type here ..."
-        onChangeText={updateSearch}
+        placeholder="Search for skill/location..."
+        onChangeText={handleSearch}
         value={search}
       />
-      <DeveloperList developers={developers} />
+      <DeveloperList developers={developersShown} />
       <StatusBar style="auto" />
     </SafeAreaView>
   )
@@ -25,7 +36,7 @@ const SearchResultsScreen = () => {
 
 export default function App() {
   return (
-    <SearchResultsScreen />
+    <SearchScreen />
     //<View style={styles.container}>
     //<Text h1 style={styles.h1_text}>
     //NonProfDev
