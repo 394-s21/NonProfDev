@@ -1,39 +1,31 @@
-import {StatusBar} from 'expo-status-bar'
-import React, {useState} from 'react'
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native'
-import {SearchBar} from 'react-native-elements';
-import Developer from './components/Developer'
-import {data} from './utils/data'
+import React, { useState } from 'react'
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
+import { SearchBar } from 'react-native-elements'
+import DeveloperList from './components/DeveloperList'
+import { data } from './utils/data'
 
+const SearchResultsScreen = () => {
+  const [search, updateSearch] = useState('')
 
-const DeveloperList = () => {
-  const [search, updateSearch] = useState("");
-  const developers = data.developers;
-
+  // Currently hardcoded data
+  const developers = data.developers
 
   return (
-    <SafeAreaView style={styles.container}>
-      <SearchBar placeholder="Type here ..." onChangeText={updateSearch} value={search} />
-      <ScrollView>
-        {developers.map((d) => (
-          <Developer key={d.id} name={d.name} location={d.location} role={d.role} skills={d.skills} />
-        ))}
-      </ScrollView>
+    <SafeAreaView>
+      <SearchBar
+        placeholder="Type here ..."
+        onChangeText={updateSearch}
+        value={search}
+      />
+      <DeveloperList developers={developers} />
+      <StatusBar style="auto" />
     </SafeAreaView>
   )
 }
 
 export default function App() {
   return (
-    <DeveloperList />
+    <SearchResultsScreen />
     //<View style={styles.container}>
     //<Text h1 style={styles.h1_text}>
     //NonProfDev
