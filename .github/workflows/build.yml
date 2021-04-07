@@ -19,6 +19,7 @@ jobs:
       with:
         expo-version: 4.x
     - run: npm ci
+    - run: node ./scripts/add_homepage.js
     - run: expo build:web
 
     - name: Deploy to Github Pages
