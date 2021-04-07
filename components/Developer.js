@@ -21,6 +21,7 @@ const Developer = ({ developer, view }) => (
       <Text>{developer.location}</Text>
       <Text>{developer.role}</Text>
       <Text>{developer.skills.join(', ')}</Text>
+      
     </View>
   </TouchableOpacity>
 )

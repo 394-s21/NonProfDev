@@ -20,6 +20,7 @@ const DeveloperProfileScreen = ({ route }) => {
         <Field label="Location" value={developer.location} />
         <Field label="Role" value={developer.role} />
         <Field label="Skills" value={developer.skills.join(', ')} />
+        <Field label="Bio" value={developer.Bio} />
       </ScrollView>
     </SafeAreaView>
   )
