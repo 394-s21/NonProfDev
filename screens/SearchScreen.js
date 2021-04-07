@@ -21,8 +21,10 @@ const SearchScreen = ({ navigation }) => {
   // Hacky search with fuse.js
   const fuse = getFuse(developers)
   const handleSearch = (search) => {
-    updateSearch(search)
-    setDevelopersShown(fuse.search(search).map((v) => v.item))
+    updateSearch(search);
+    search === '' ? 
+    setDevelopersShown(developers) : 
+    setDevelopersShown(fuse.search(search).map((v) => v.item));
   }
 
   // View developer detail
