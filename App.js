@@ -1,44 +1,57 @@
-import { StatusBar } from 'expo-status-bar'
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import {StatusBar} from 'expo-status-bar'
+import React, {useState} from 'react'
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
+import {SearchBar} from 'react-native-elements';
+import Developer from './components/Developer'
+import {data} from './utils/data'
 
 
-export default function App() {
+const DeveloperList = () => {
+  const [search, updateSearch] = useState("");
+  const developers = data.developers;
+
+
   return (
-    <View style={styles.container}>
-      <Text h1 style={styles.h1_text}>
-        NonProfDev
-      </Text>
-      <Text h3 style={styles.h3_text}>
-        A simple, intuitive platform to connect non-profit organizations with
-        passionate web developers
-      </Text>
-      <Text h3 style={styles.h3_text}>
-        Created by the CS 394 Red Team
-      </Text>
-      <Text h4 style={styles.h4_text}>
-        Benjamin Nober, Chris Song, Jacob Wat, Linus Okoth, Mason Brachmann,
-        Tiger Nie, Zaddeen Benaissa
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <SearchBar placeholder="Type here ..." onChangeText={updateSearch} value={search} />
+      <ScrollView>
+        {developers.map((d) => (
+          <Developer key={d.id} name={d.name} location={d.location} role={d.role} skills={d.skills} />
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
-const User = ({name, location, role}) => {
-  <View style={styles.user_container}>
-        <Text>{name}</Text> 
-        <Text>{location}</Text>
-        <Text>{role}</Text>
-      </View>
-}
-
-const TempScreen = () => {
-  <SafeAreaView style={styles.container}>
-    <ScrollView>
-      
-    </ScrollView>
-  </SafeAreaView>
+export default function App() {
+  return (
+    <DeveloperList />
+    //<View style={styles.container}>
+    //<Text h1 style={styles.h1_text}>
+    //NonProfDev
+    //</Text>
+    //<Text h3 style={styles.h3_text}>
+    //A simple, intuitive platform to connect non-profit organizations with
+    //passionate web developers
+    //</Text>
+    //<Text h3 style={styles.h3_text}>
+    //Created by the CS 394 Red Team
+    //</Text>
+    //<Text h4 style={styles.h4_text}>
+    //Benjamin Nober, Chris Song, Jacob Wat, Linus Okoth, Mason Brachmann,
+    //Tiger Nie, Zaddeen Benaissa
+    //</Text>
+    //<StatusBar style="auto" />
+    //</View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -48,10 +61,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  user_container:{
+
+  userContainer: {
     flex: 1,
     alignItems: 'center',
   },
+
   h1_text: {
     fontSize: 48,
     marginBottom: 25,
