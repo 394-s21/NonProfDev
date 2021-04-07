@@ -2,18 +2,23 @@ import React from 'react'
 import { StyleSheet, Image, Text, TouchableOpacity } from 'react-native'
 
 // TODO: avatar/profile picture is currently hardcoded
-const Developer = ({ name, location, role, skills }) => (
-  <TouchableOpacity style={styles.developerButton}>
+const Developer = ({ developer, view }) => (
+  <TouchableOpacity
+    style={styles.developerButton}
+    onPress={() => {
+      view(developer)
+    }}
+  >
     <Image
       source={{
         uri:
           'https://www.routeone.com/sites/default/files/default_images/default-person.png',
       }}
     />
-    <Text>{name}</Text>
-    <Text>{location}</Text>
-    <Text>{role}</Text>
-    <Text>{skills.join(', ')}</Text>
+    <Text>{developer.name}</Text>
+    <Text>{developer.location}</Text>
+    <Text>{developer.role}</Text>
+    <Text>{developer.skills.join(', ')}</Text>
   </TouchableOpacity>
 )
 
