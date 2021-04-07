@@ -2,11 +2,12 @@ import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+
 export default function App() {
   return (
     <View style={styles.container}>
       <Text h1 style={styles.h1_text}>
-        NonProvDev
+        NonProfDev
       </Text>
       <Text h3 style={styles.h3_text}>
         A simple, intuitive platform to connect non-profit organizations with
@@ -24,12 +25,32 @@ export default function App() {
   )
 }
 
+const User = ({name, location, role}) => {
+  <View style={styles.user_container}>
+        <Text>{name}</Text> 
+        <Text>{location}</Text>
+        <Text>{role}</Text>
+      </View>
+}
+
+const TempScreen = () => {
+  <SafeAreaView style={styles.container}>
+    <ScrollView>
+      
+    </ScrollView>
+  </SafeAreaView>
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  user_container:{
+    flex: 1,
+    alignItems: 'center',
   },
   h1_text: {
     fontSize: 48,
