@@ -44,12 +44,14 @@ const styles = StyleSheet.create({
   developerButton: {
     borderRadius: 5,
     borderStyle: 'solid',
-    borderWidth: 2,
+    borderWidth: 1,
+    borderColor: '#DFDFDF',
     // justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
     margin: 10,
     padding: 10,
+    backgroundColor: "white",
   },
   developerImage: {
     width: 75,
@@ -58,22 +60,23 @@ const styles = StyleSheet.create({
   },
   developerInfo : {
     flexDirection: 'column',
-    flexShrink: 1
+    flexShrink: 1,
   }, 
   developerName: {
     fontWeight: "bold", 
-    fontSize: 14
+    fontSize: 18,
   }, 
   developerLocation: {
     fontWeight: "300", 
-    fontSize: 13
+    fontSize: 16
   }, 
   developerRole: {
     fontStyle: "italic",
-    fontSize: 13
+    fontSize: 14
   },
   developerSkills: {
-    fontSize: 13
+    marginTop: 10,
+    fontSize: 16
   }
 })
 

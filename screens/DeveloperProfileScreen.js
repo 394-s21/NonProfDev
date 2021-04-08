@@ -16,11 +16,11 @@ const DeveloperProfileScreen = ({ route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Field label="Name" value={developer.name} />
-        <Field label="Location" value={developer.location} />
-        <Field label="Role" value={developer.role} />
-        <Field label="Skills" value={developer.skills.join(', ')} />
-        <Field label="Bio" value={developer.Bio} />
+        <Text label="Name" style={styles.developerName}> {developer.name} </Text>
+        <Field label="Location" value={developer.location} style={styles.developerLocation}/>
+        <Field label="Bio" value={developer.Bio} style={styles.developerBio}  />
+        <Field label="Role" value={developer.role} style={styles.developerRole} />
+        <Field label="Skills" value={developer.skills.join(', ')} style={styles.developerSkills} />
       </ScrollView>
     </SafeAreaView>
   )
@@ -29,13 +29,16 @@ const DeveloperProfileScreen = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 10,
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "90%",
   },
   field: {
     padding: 5,
     backgroundColor: 'white',
     borderRadius: 5,
+    fontSize: 18,
   },
   fieldContainer: {
     marginTop: 10,
@@ -43,6 +46,11 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: 'bold',
+  },
+
+  developerName: {
+    fontSize: 24,
+    marginBottom: 10,
   },
 })
 
