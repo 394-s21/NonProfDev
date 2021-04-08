@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const Field = ({ label, value }) => {
@@ -22,6 +22,10 @@ const DeveloperProfileScreen = ({ route }) => {
         <Field label="Role" value={developer.role} style={styles.developerRole} />
         <Field label="Skills" value={developer.skills.join(', ')} style={styles.developerSkills} />
       </ScrollView>
+      
+      <TouchableOpacity style={styles.connectButton}>
+        <Text style={styles.connectText}>Connect</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   )
 }
@@ -47,11 +51,20 @@ const styles = StyleSheet.create({
   label: {
     fontWeight: 'bold',
   },
-
   developerName: {
     fontSize: 24,
     marginBottom: 10,
   },
+  connectButton: {
+    margin: 30,
+    padding: 10,
+    textAlign: 'center',
+    backgroundColor: 'lightblue',
+  },
+  connectText: {
+    fontSize: 22,
+    fontWeight: 500,
+  }
 })
 
 export default DeveloperProfileScreen
