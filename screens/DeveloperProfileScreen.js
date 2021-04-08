@@ -1,5 +1,10 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { SafeAreaView, 
+        StyleSheet, 
+        Text, 
+        View, 
+        TouchableOpacity, 
+        Image } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const Field = ({ label, value }) => {
@@ -15,8 +20,12 @@ const DeveloperProfileScreen = ({ route }) => {
   const developer = route.params.developer
   return (
     <SafeAreaView style={styles.container}>
+        <Image
+          style={styles.developerImage}
+          source={{ uri: developer.pic }}
+        />
+      <Text label="Name" style={styles.developerName}> {developer.name} </Text>
       <ScrollView>
-        <Text label="Name" style={styles.developerName}> {developer.name} </Text>
         <Field label="Location" value={developer.location} style={styles.developerLocation}/>
         <Field label="Bio" value={developer.Bio} style={styles.developerBio}  />
         <Field label="Role" value={developer.role} style={styles.developerRole} />
@@ -54,6 +63,15 @@ const styles = StyleSheet.create({
   developerName: {
     fontSize: 24,
     marginBottom: 10,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  developerImage: {
+    width: 200,
+    height: 300,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 10,
   },
   connectButton: {
     margin: 30,
@@ -63,7 +81,9 @@ const styles = StyleSheet.create({
   },
   connectText: {
     fontSize: 22,
-    fontWeight: 500,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    // fontWeight: 500,
   }
 })
 

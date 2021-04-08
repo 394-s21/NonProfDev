@@ -24,10 +24,7 @@ const Developer = ({ developer, view }) => {
   >
     <Image
       style={styles.developerImage}
-      source={{
-        uri:
-          'https://www.routeone.com/sites/default/files/default_images/default-person.png',
-      }}
+      source={{ uri: developer.pic }}
     />
     <View style={styles.developerInfo}>
       <Text style={styles.developerName}>{developer.name}</Text>
@@ -55,7 +52,7 @@ const styles = StyleSheet.create({
   },
   developerImage: {
     width: 75,
-    height: 75,
+    height: 100,
     marginRight: 10
   },
   developerInfo : {
