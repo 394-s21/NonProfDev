@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     flex: 1,
     //alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 20
+    paddingTop: 20,
+    backgroundColor: "#D7EAF9",
   },
   bannerStyle: {
     alignItems: 'center',
