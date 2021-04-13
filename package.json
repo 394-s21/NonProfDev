@@ -6,7 +6,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write ./App.js ./app.json ./components ./screens ./utils ./scripts"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",

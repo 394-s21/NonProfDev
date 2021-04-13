@@ -1,13 +1,15 @@
-import { setStatusBarNetworkActivityIndicatorVisible } from 'expo-status-bar';
+import { setStatusBarNetworkActivityIndicatorVisible } from 'expo-status-bar'
 import React, { useState } from 'react'
-import { SafeAreaView, 
-        StyleSheet, 
-        Text, 
-        View, 
-        TouchableOpacity, 
-        Image } from 'react-native'
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Form from '../components/Form';
+import Form from '../components/Form'
 
 const Field = ({ label, value }) => {
   return (
@@ -19,33 +21,45 @@ const Field = ({ label, value }) => {
 }
 
 const DeveloperContactInfoScreen = ({ route, navigation }) => {
+  const [messageSent, setMessageSent] = useState(false)
 
-  const [messageSent, setMessageSent] = useState(false);
-  
   const view = () => {
-      setMessageSent(true)
+    setMessageSent(true)
   }
 
   const developer = route.params.developer
 
-  const placeholder = "Enter message to "+ developer.name
+  const placeholder = 'Enter message to ' + developer.name
   return (
     <SafeAreaView style={styles.container}>
-       
-      { !messageSent && <Text label="Name" style={styles.developerName}>Contact {developer.name} </Text>}
-        
-      { messageSent ?  
-        <Text label="Name" style={styles.developerName}>Message succesfully sent to {developer.name}! </Text> 
-        : 
+      {!messageSent && (
+        <Text label="Name" style={styles.developerName}>
+          Contact {developer.name}{' '}
+        </Text>
+      )}
+
+      {messageSent ? (
+        <Text label="Name" style={styles.developerName}>
+          Message succesfully sent to {developer.name}!{' '}
+        </Text>
+      ) : (
         <ScrollView>
-            <Form initialValues={{message: "" }}>
-                <Form.Field name="message" leftIcon="inbox" placeholder={placeholder} autoCapitalize="none" autoFocus={true} multiline={true} numberOfLines={20}/>
-                    
-            </Form>
-            <TouchableOpacity style={styles.connectButton} onPress={() => view()}>
-                <Text style={styles.connectText}>Send Message</Text>
-            </TouchableOpacity>
-      </ScrollView>   }
+          <Form initialValues={{ message: '' }}>
+            <Form.Field
+              name="message"
+              leftIcon="inbox"
+              placeholder={placeholder}
+              autoCapitalize="none"
+              autoFocus={true}
+              multiline={true}
+              numberOfLines={20}
+            />
+          </Form>
+          <TouchableOpacity style={styles.connectButton} onPress={() => view()}>
+            <Text style={styles.connectText}>Send Message</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      )}
     </SafeAreaView>
   )
 }
@@ -54,9 +68,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 10,
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: "90%",
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '90%',
   },
   field: {
     padding: 5,
@@ -95,7 +109,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     // fontWeight: 500,
-  }
+  },
 })
 
 export default DeveloperContactInfoScreen

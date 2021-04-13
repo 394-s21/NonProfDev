@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React from 'react'
+import { View, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-import Colors from './colors';
+import Colors from './colors'
 
 export default function FormTextInput({
   leftIcon,
@@ -37,7 +37,7 @@ export default function FormTextInput({
         </TouchableOpacity>
       )}
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -50,16 +50,16 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   icon: {
-    marginRight: 10
+    marginRight: 10,
   },
   input: {
     flex: 1,
     width: '100%',
     fontSize: 18,
-    color: Colors.black
+    color: Colors.black,
   },
   rightIconStyles: {
     alignSelf: 'center',
-    marginLeft: 10
-  }
-});
+    marginLeft: 10,
+  },
+})

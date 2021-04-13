@@ -1,5 +1,12 @@
 import React from 'react'
-import { StatusBar, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native'
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TouchableOpacity,
+} from 'react-native'
 
 // Original home screen
 // Currently not used
@@ -16,11 +23,21 @@ const ChooseAppViewScreen = ({ navigation }) => {
       <Text h3 style={styles.h3_text}>
         Are you a:
       </Text>
-      <View style={styles.roleButton}> 
-        <Button title="Developer" onPress={() => navigation.navigate("DeveloperPreferenceSelectionScreen")}></Button>
+      <View style={styles.roleButton}>
+        <Button
+          title="Developer"
+          onPress={() =>
+            navigation.navigate('DeveloperPreferenceSelectionScreen')
+          }
+        ></Button>
       </View>
-      <View style={styles.roleButton}> 
-        <Button title="Non-Profit Organization" onPress={() => navigation.navigate("SearchScreen")}> </Button>
+      <View style={styles.roleButton}>
+        <Button
+          title="Non-Profit Organization"
+          onPress={() => navigation.navigate('SearchScreen')}
+        >
+          {' '}
+        </Button>
       </View>
 
       <StatusBar style="auto" />
@@ -60,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'pink',
     margin: 15,
-  }
+  },
 })
 
 export default ChooseAppViewScreen

@@ -49,7 +49,7 @@ export default function App() {
         <Stack.Screen
           name="DeveloperContactInfoScreen"
           component={DeveloperContactInfoScreen}
-          options={{ title: 'Contact Developer'}}
+          options={{ title: 'Contact Developer' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

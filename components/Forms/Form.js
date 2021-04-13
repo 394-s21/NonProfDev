@@ -1,11 +1,11 @@
-import React from 'react';
-import { Formik } from 'formik';
+import React from 'react'
+import { Formik } from 'formik'
 
 export default function Form({
   children,
   initialValues,
   onSubmit,
-  validationSchema
+  validationSchema,
 }) {
   return (
     <Formik
@@ -15,5 +15,5 @@ export default function Form({
     >
       {() => <React.Fragment>{children}</React.Fragment>}
     </Formik>
-  );
+  )
 }

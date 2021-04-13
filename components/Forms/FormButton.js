@@ -1,12 +1,12 @@
-import React from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useFormikContext } from 'formik';
+import React from 'react'
+import { Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { useFormikContext } from 'formik'
 
-import Colors from './colors';
+import Colors from './colors'
 
 export default function FormButton({ title, color = 'primary' }) {
-  const { handleSubmit, values } = useFormikContext();
-  const text = typeof title === 'function' ? title(values) : title;
+  const { handleSubmit, values } = useFormikContext()
+  const text = typeof title === 'function' ? title(values) : title
 
   return (
     <TouchableOpacity
@@ -15,7 +15,7 @@ export default function FormButton({ title, color = 'primary' }) {
     >
       <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 15,
-    width: '100%'
+    width: '100%',
   },
   buttonText: {
     color: Colors.white,
     fontSize: 18,
     fontWeight: '600',
-    textTransform: 'uppercase'
-  }
-});
+    textTransform: 'uppercase',
+  },
+})

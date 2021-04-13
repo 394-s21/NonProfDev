@@ -10,39 +10,38 @@ const Banner = ({ title }) => (
 )
 
 const JobDisplayScreen = ({ route, navigation }) => {
-
-  const selections = route.params.selections;
+  const selections = route.params.selections
   const prefDict = {
-    'pref1': "",
-    'pref2': "",
-    'pref3': "",
-    'pref4': "",
+    pref1: '',
+    pref2: '',
+    pref3: '',
+    pref4: '',
   }
 
   switch (parseInt(selections['pref1'])) {
     case 0:
-      prefDict['pref1'] = "Web Design";
-      break;
+      prefDict['pref1'] = 'Web Design'
+      break
     case 1:
-      prefDict['pref1'] = "Web Development";
-      break;
+      prefDict['pref1'] = 'Web Development'
+      break
     default:
-      prefDict['pref1'] = "Backend Development";
+      prefDict['pref1'] = 'Backend Development'
   }
 
   switch (parseInt(selections['pref2'])) {
     case 0:
-      prefDict['pref2'] = "Community Leadership";
-      break;
+      prefDict['pref2'] = 'Community Leadership'
+      break
     case 1:
-      prefDict['pref2'] = "Education";
-      break;
+      prefDict['pref2'] = 'Education'
+      break
     default:
-      prefDict['pref2'] = "Religion";
+      prefDict['pref2'] = 'Religion'
   }
 
-  prefDict['pref3'] = selections['pref3'];
-  prefDict['pref4'] = selections['pref4'];
+  prefDict['pref3'] = selections['pref3']
+  prefDict['pref4'] = selections['pref4']
 
   const [search, updateSearch] = useState('')
 
@@ -55,10 +54,10 @@ const JobDisplayScreen = ({ route, navigation }) => {
   // Hacky search with fuse.js
   const fuse = getFuse(jobs)
   const handleSearch = (search) => {
-    updateSearch(search);
-    search === '' ? 
-    setJobsShown(jobs) : 
-    setJobsShown(fuse.search(search).map((v) => v.item));
+    updateSearch(search)
+    search === ''
+      ? setJobsShown(jobs)
+      : setJobsShown(fuse.search(search).map((v) => v.item))
   }
 
   // View job detail
@@ -69,10 +68,7 @@ const JobDisplayScreen = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <JobList jobs={jobsShown} prefs={prefDict} view={view} />
-      <StatusBar 
-        style="auto"
-        hidden="false"
-        barStyle="dark-content" />
+      <StatusBar style="auto" hidden="false" barStyle="dark-content" />
     </SafeAreaView>
   )
 }
@@ -83,13 +79,13 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 20,
-    backgroundColor: "#D7EAF9",
+    backgroundColor: '#D7EAF9',
   },
   bannerStyle: {
     alignItems: 'center',
     color: 'white',
     backgroundColor: '#cc0000ff',
-    fontSize: 28
+    fontSize: 28,
   },
 })
 

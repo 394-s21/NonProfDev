@@ -21,10 +21,10 @@ const SearchScreen = ({ navigation }) => {
   // Hacky search with fuse.js
   const fuse = getFuse(developers)
   const handleSearch = (search) => {
-    updateSearch(search);
-    search === '' ? 
-    setDevelopersShown(developers) : 
-    setDevelopersShown(fuse.search(search).map((v) => v.item));
+    updateSearch(search)
+    search === ''
+      ? setDevelopersShown(developers)
+      : setDevelopersShown(fuse.search(search).map((v) => v.item))
   }
 
   // View developer detail
@@ -41,10 +41,7 @@ const SearchScreen = ({ navigation }) => {
         lightTheme={true}
       />
       <DeveloperList developers={developersShown} view={view} />
-      <StatusBar 
-        style="auto"
-        hidden="false"
-        barStyle="dark-content" />
+      <StatusBar style="auto" hidden="false" barStyle="dark-content" />
     </SafeAreaView>
   )
 }
@@ -55,13 +52,13 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 20,
-    backgroundColor: "#D7EAF9",
+    backgroundColor: '#D7EAF9',
   },
   bannerStyle: {
     alignItems: 'center',
     color: 'white',
     backgroundColor: '#cc0000ff',
-    fontSize: 28
+    fontSize: 28,
   },
 })
 

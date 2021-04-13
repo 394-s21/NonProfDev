@@ -1,13 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-const PreferenceButton = ({select, buttonText, isSelected}) => (
-  <TouchableOpacity onPress={select} style={styles[isSelected ? 'preferenceButtonSelected' : 'preferenceButton']}>
-    <Text style={styles.preferenceText}>
-      {buttonText}
-    </Text>
+const PreferenceButton = ({ select, buttonText, isSelected }) => (
+  <TouchableOpacity
+    onPress={select}
+    style={styles[isSelected ? 'preferenceButtonSelected' : 'preferenceButton']}
+  >
+    <Text style={styles.preferenceText}>{buttonText}</Text>
   </TouchableOpacity>
-);
+)
 
 const preferenceButtonBase = {
   borderRadius: 5,
@@ -15,25 +16,24 @@ const preferenceButtonBase = {
   height: 40,
   minWidth: 90,
   maxWidth: 90,
-};
+}
 
 const styles = StyleSheet.create({
   preferenceButton: {
     ...preferenceButtonBase,
     backgroundColor: '#d3d3d3',
   },
-  preferenceText:{
+  preferenceText: {
     flex: 1,
     justifyContent: 'center',
     color: '#fff',
     fontSize: 12,
     textAlign: 'center',
   },
-  preferenceButtonSelected:{
+  preferenceButtonSelected: {
     ...preferenceButtonBase,
     backgroundColor: '#004a99',
   },
-
-});
+})
 
 export default PreferenceButton
