@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const PreferenceButton = ({buttonText, isDisabled, isSelected}) => (
-  <TouchableOpacity style={styles[isSelected ? 'preferenceButtonSelected' : isDisabled ? 'preferenceButtonDisabled' : 'preferenceButton']}>
+const PreferenceButton = ({select, buttonText, isSelected}) => (
+  <TouchableOpacity onPress={select} style={styles[isSelected ? 'preferenceButtonSelected' : 'preferenceButton']}>
     <Text style={styles.preferenceText}>
       {buttonText}
     </Text>
@@ -20,7 +20,7 @@ const preferenceButtonBase = {
 const styles = StyleSheet.create({
   preferenceButton: {
     ...preferenceButtonBase,
-    backgroundColor: '#66b0ff',
+    backgroundColor: '#d3d3d3',
   },
   preferenceText:{
     flex: 1,
@@ -32,10 +32,6 @@ const styles = StyleSheet.create({
   preferenceButtonSelected:{
     ...preferenceButtonBase,
     backgroundColor: '#004a99',
-  },
-  preferenceButtonDisabled:{
-    ...preferenceButtonBase,
-    backgroundColor: '#d3d3d3',
   },
 
 });
