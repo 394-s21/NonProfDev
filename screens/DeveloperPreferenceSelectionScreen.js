@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { StatusBar, StyleSheet, View, Button, SafeAreaView } from 'react-native'
+import React, { useState } from 'react'
+import { StatusBar, StyleSheet, SafeAreaView, Text } from 'react-native'
 import PreferenceGroup from '../components/PreferenceGroup'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
 // Preference data hardcoded for now, substitute for db call later
 const preferenceData = [
@@ -77,15 +77,15 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
           />
         ))}
 
-        <View style={styles.roleButton}>
-          <Button
-            title="Submit Preferences"
-            onPress={() => {
-              const preferences = getPreferences(preferenceData, selections)
-              navigation.navigate('JobListScreen', { preferences })
-            }}
-          />
-        </View>
+        <TouchableOpacity
+          style={styles.roleButton}
+          onPress={() => {
+            const preferences = getPreferences(preferenceData, selections)
+            navigation.navigate('JobListScreen', { preferences })
+          }}
+        >
+          <Text style={styles.submitButtonText}>Submit Preferences</Text>
+        </TouchableOpacity>
 
         <StatusBar style="auto" />
       </ScrollView>
@@ -99,27 +99,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    // marginRight: 20,
   },
-
+  userContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
   h1_text: {
-    fontSize: 36,
-    marginBottom: 25,
-  },
-  h3_text: {
     fontSize: 24,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  h4_text: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 15,
+    marginTop: 25,
   },
   roleButton: {
-    backgroundColor: 'white',
-    fontSize: 16,
-    color: 'pink',
-    margin: 15,
+    borderRadius: 3,
+    backgroundColor: 'seagreen',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 24,
+    marginTop: 45,
+    marginBottom: 15,
+    padding: 20,
+    width: 300,
+  },
+  submitButtonText: {
+    color: 'ghostwhite',
+    fontSize: 20,
+    textAlign: 'center',
   },
 })
 

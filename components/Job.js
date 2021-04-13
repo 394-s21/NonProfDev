@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderStyle: 'solid',
     borderWidth: 1,
-    borderColor: '#DFDFDF',
+    borderColor: 'black',
     // justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
@@ -72,9 +72,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 10,
     padding: 10,
-    backgroundColor: 'green',
+    backgroundColor: '#289C28',
   },
-
   jobInfo: {
     flexDirection: 'column',
     flexShrink: 1,

@@ -21,7 +21,7 @@ export default function App() {
         <Stack.Screen
           name="ChooseAppViewScreen"
           component={ChooseAppViewScreen}
-          options={{ title: 'About' }}
+          options={{ title: 'NonProfDev' }}
         />
         <Stack.Screen
           name="DeveloperPreferenceSelectionScreen"

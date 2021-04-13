@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   TouchableOpacity,
 } from 'react-native'
 
@@ -23,21 +22,23 @@ const ChooseAppViewScreen = ({ navigation }) => {
       <Text h3 style={styles.h3_text}>
         Are you a:
       </Text>
-      <View style={styles.roleButton}>
-        <Button
-          title="Developer"
+      <View>
+        <TouchableOpacity
+          style={styles.roleButton}
           onPress={() =>
             navigation.navigate('DeveloperPreferenceSelectionScreen')
           }
-        ></Button>
+        >
+          <Text style={styles.buttonText}>Developer</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.roleButton}>
-        <Button
-          title="Non-Profit Organization"
+      <View>
+        <TouchableOpacity
+          style={styles.roleButton}
           onPress={() => navigation.navigate('SearchScreen')}
         >
-          {' '}
-        </Button>
+          <Text style={styles.buttonText}>Non-Profit Organization</Text>
+        </TouchableOpacity>
       </View>
 
       <StatusBar style="auto" />
@@ -73,10 +74,17 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   roleButton: {
-    backgroundColor: 'white',
+    backgroundColor: '#2196F3',
     fontSize: 16,
-    color: 'pink',
     margin: 15,
+    width: 250,
+    padding: 15,
+    textAlign: 'center',
+  },
+  buttonText: {
+    fontSize: 20,
+    color: 'ghostwhite',
+    textAlign: 'center',
   },
 })
 
