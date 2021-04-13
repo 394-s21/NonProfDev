@@ -16,11 +16,17 @@ const ChooseAppViewScreen = ({ navigation }) => {
       <Text h3 style={styles.h3_text}>
         Are you a:
       </Text>
-      <View style={styles.roleButton}> 
-        <Button title="Developer" onPress={() => navigation.navigate("DeveloperPreferenceSelectionScreen")}></Button>
+      <View> 
+        <TouchableOpacity style={styles.roleButton} onPress={() => navigation.navigate("DeveloperPreferenceSelectionScreen")}>
+          <Text style={styles.buttonText}>Developer</Text>
+        </TouchableOpacity>
+        {/* <Button title="Developer" onPress={() => navigation.navigate("DeveloperPreferenceSelectionScreen")}></Button> */}
       </View>
-      <View style={styles.roleButton}> 
-        <Button title="Non-Profit Organization" onPress={() => navigation.navigate("SearchScreen")}> </Button>
+      <View> 
+        <TouchableOpacity style={styles.roleButton} onPress={() => navigation.navigate("SearchScreen")}>
+          <Text style={styles.buttonText}>Non-Profit Organization</Text>
+        </TouchableOpacity>
+        {/* <Button title="Non-Profit Organization" onPress={() => navigation.navigate("SearchScreen")}> </Button> */}
       </View>
 
       <StatusBar style="auto" />
@@ -56,10 +62,17 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   roleButton: {
-    backgroundColor: 'white',
+    backgroundColor: '#2196F3',
     fontSize: 16,
-    color: 'pink',
     margin: 15,
+    width: 250,
+    padding: 15,
+    textAlign: 'center',
+  },
+  buttonText: {
+    fontSize: 20,
+    color: 'ghostwhite',
+    textAlign: 'center',
   }
 })
 

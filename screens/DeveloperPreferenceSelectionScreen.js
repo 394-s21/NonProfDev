@@ -1,7 +1,8 @@
 import React, { useState, useEffect} from 'react'
-import { StatusBar, StyleSheet, Text, View, Button, SafeAreaView, } from 'react-native'
-import PreferenceButton from '../components/PreferenceButton'
+import { StatusBar, StyleSheet, Text, View, SafeAreaView, Button, TouchableOpacity } from 'react-native'
+import { withTheme } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler'
+import PreferenceButton from '../components/PreferenceButton'
 
 // Original home screen
 // Currently not used
@@ -23,39 +24,40 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-      <Text h1 style={styles.h1_text}>
-        Primary Skillset/Desired Role
-      </Text>
-      <PreferenceButton select={() => handleClick('pref1', 0)} buttonText={"Web Design"} isSelected={selections['pref1'] === 0} > </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref1', 1)} buttonText={"Web Development"} isSelected={selections['pref1'] === 1} > </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref1', 2)} buttonText={"Backend Development"} isSelected={selections['pref1'] === 2} > </PreferenceButton>
-      <Text h1 style={styles.h1_text}>
-        Primary Field of Interest
-      </Text>
-      <PreferenceButton select={() => handleClick('pref2', 0)} buttonText={"Community Leadership"} isSelected={selections['pref2'] === 0} > </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref2', 1)} buttonText={"Education"} isSelected={selections['pref2'] === 1} > </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref2', 2)} buttonText={"Religion"} isSelected={selections['pref2'] === 2} > </PreferenceButton>
-      <Text h1 style={styles.h1_text}>
-        Project Length
-      </Text>
-      <PreferenceButton select={() => handleClick('pref3', 0)} buttonText={"One Month or Shorter"} isSelected={selections['pref3'] === 0} > </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref3', 1)} buttonText={"1-3 Months (One Quarter)"} isSelected={selections['pref3'] === 1}> </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref3', 2)} buttonText={"3+ Months"} isSelected={selections['pref3'] === 2} > </PreferenceButton>
-      <Text h1 style={styles.h1_text}>
-        Weekly Commitment
-      </Text>
-      <PreferenceButton select={() => handleClick('pref4', 0)} buttonText={"5 Hours or Fewer"} isSelected={selections['pref4'] === 0}> </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref4', 1)} buttonText={"5-10 Hours"} isSelected={selections['pref4'] === 1}> </PreferenceButton>
-      <PreferenceButton select={() => handleClick('pref4', 2)} buttonText={"10+ Hours"} isSelected={selections['pref4'] === 2} > </PreferenceButton>
+        <Text h1 style={styles.h1_text}>
+          Primary Skillset/Desired Role
+        </Text>
+        <PreferenceButton select={() => handleClick('pref1', 0)} buttonText={"Web Design"} isSelected={selections['pref1'] === 0} > </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref1', 1)} buttonText={"Web Development"} isSelected={selections['pref1'] === 1} > </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref1', 2)} buttonText={"Backend Development"} isSelected={selections['pref1'] === 2} > </PreferenceButton>
+        <Text h1 style={styles.h1_text}>
+          Primary Field of Interest
+        </Text>
+        <PreferenceButton select={() => handleClick('pref2', 0)} buttonText={"Community Leadership"} isSelected={selections['pref2'] === 0} > </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref2', 1)} buttonText={"Education"} isSelected={selections['pref2'] === 1} > </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref2', 2)} buttonText={"Religion"} isSelected={selections['pref2'] === 2} > </PreferenceButton>
+        <Text h1 style={styles.h1_text}>
+          Project Length
+        </Text>
+        <PreferenceButton select={() => handleClick('pref3', 0)} buttonText={"One Month or Shorter"} isSelected={selections['pref3'] === 0} > </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref3', 1)} buttonText={"1-3 Months (One Quarter)"} isSelected={selections['pref3'] === 1}> </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref3', 2)} buttonText={"3+ Months"} isSelected={selections['pref3'] === 2} > </PreferenceButton>
+        <Text h1 style={styles.h1_text}>
+          Weekly Commitment
+        </Text>
+        <PreferenceButton select={() => handleClick('pref4', 0)} buttonText={"5 Hours or Fewer"} isSelected={selections['pref4'] === 0}> </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref4', 1)} buttonText={"5-10 Hours"} isSelected={selections['pref4'] === 1}> </PreferenceButton>
+        <PreferenceButton select={() => handleClick('pref4', 2)} buttonText={"10+ Hours"} isSelected={selections['pref4'] === 2} > </PreferenceButton>
 
-      <View style={styles.roleButton}> 
-        <Button title="Submit Preferences" onPress={() => navigation.navigate("JobDisplayScreen", {selections})}></Button>
-      </View>
+        <View> 
+          <TouchableOpacity  style={styles.roleButton} onPress={() => navigation.navigate("JobDisplayScreen", {selections})}>
+            <Text style={styles.submitButtonText}>Submit Preferences</Text>
+          </TouchableOpacity>
+          {/* <Button title="Submit Preferences" onPress={() => navigation.navigate("JobDisplayScreen", {selections})}></Button> */}
+        </View>
       
-      <StatusBar style="auto" />
-
+        <StatusBar style="auto" />
       </ScrollView>
-      
     </SafeAreaView>
   )
 }
@@ -66,32 +68,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    // marginRight: 20,
   },
-
   userContainer: {
     flex: 1,
     alignItems: 'center',
   },
-
   h1_text: {
-    fontSize: 48,
-    marginBottom: 25,
-  },
-  h3_text: {
     fontSize: 24,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  h4_text: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 15,
+    marginTop: 25,
   },
   roleButton: {
-    backgroundColor: 'white',
-    fontSize: 16,
-    color: 'pink',
-    margin: 15,
+    borderRadius: 3,
+    backgroundColor: 'seagreen',
+    fontSize: 24,
+    marginTop: 45,
+    marginBottom: 15,
+    padding: 20,
+    width: 300,
+  },
+  submitButtonText: {
+    color: 'ghostwhite',
+    fontSize: 20,
+    textAlign: 'center',
   }
 })
 
