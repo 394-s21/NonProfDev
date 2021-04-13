@@ -7,6 +7,7 @@ import AboutScreen from './screens/AboutScreen'
 import DeveloperProfileScreen from './screens/DeveloperProfileScreen'
 import ChooseAppViewScreen from './screens/ChooseAppViewScreen'
 import DeveloperPreferenceSelectionScreen from './screens/DeveloperPreferenceSelectionScreen'
+import DeveloperContactInfoScreen from './screens/DeveloperContactInfoScreen'
 
 const Stack = createStackNavigator()
 
@@ -38,6 +39,11 @@ export default function App() {
           name="AboutScreen"
           component={AboutScreen}
           options={{ title: 'About' }}
+        />
+        <Stack.Screen
+          name="DeveloperContactInfoScreen"
+          component={DeveloperContactInfoScreen}
+          options={{ title: 'Contact Developer'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

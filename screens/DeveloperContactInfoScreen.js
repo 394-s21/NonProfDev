@@ -16,32 +16,18 @@ const Field = ({ label, value }) => {
   )
 }
 
-const DeveloperProfileScreen = ({ route, navigation }) => {
-  
-  
-  // View developer detail
-  const view = (developer) => {
-    navigation.navigate('DeveloperContactInfoScreen', { developer })
-  }
-
-
+const DeveloperContactInfoScreen = ({ route, navigation }) => {
   const developer = route.params.developer
   return (
     <SafeAreaView style={styles.container}>
-        <Image
-          style={styles.developerImage}
-          source={{ uri: developer.pic }}
-        />
-      <Text label="Name" style={styles.developerName}> {developer.name} </Text>
+       
+      <Text label="Name" style={styles.developerName}>Contact {developer.name} </Text>
       <ScrollView>
-        <Field label="Location" value={developer.location} style={styles.developerLocation}/>
-        <Field label="Bio" value={developer.Bio} style={styles.developerBio}  />
-        <Field label="Role" value={developer.role} style={styles.developerRole} />
-        <Field label="Skills" value={developer.skills.join(', ')} style={styles.developerSkills} />
+        <Field label="Messsage" value={developer.location} style={styles.developerLocation}/>
       </ScrollView>
       
-      <TouchableOpacity style={styles.connectButton} onPress={() => view(developer)}>
-        <Text style={styles.connectText}>Connect</Text>
+      <TouchableOpacity style={styles.connectButton}>
+        <Text style={styles.connectText}>Send Message</Text>
       </TouchableOpacity>
     </SafeAreaView>
   )
@@ -95,4 +81,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default DeveloperProfileScreen
+export default DeveloperContactInfoScreen
