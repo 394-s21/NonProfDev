@@ -1,5 +1,12 @@
 import React, { useState } from 'react'
-import { StatusBar, StyleSheet, SafeAreaView, Text } from 'react-native'
+import {
+  StatusBar,
+  StyleSheet,
+  SafeAreaView,
+  Text,
+  View,
+  Button,
+} from 'react-native'
 import PreferenceGroup from '../components/PreferenceGroup'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
@@ -77,15 +84,16 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
           />
         ))}
 
-        <TouchableOpacity
-          style={styles.roleButton}
-          onPress={() => {
-            const preferences = getPreferences(preferenceData, selections)
-            navigation.navigate('JobListScreen', { preferences })
-          }}
-        >
-          <Text style={styles.submitButtonText}>Submit Preferences</Text>
-        </TouchableOpacity>
+        <View style={styles.roleButton}>
+          <Button
+            style={styles.submitButtonText}
+            title="Submit Preferences"
+            onPress={() => {
+              const preferences = getPreferences(preferenceData, selections)
+              navigation.navigate('JobListScreen', { preferences })
+            }}
+          />
+        </View>
 
         <StatusBar style="auto" />
       </ScrollView>
