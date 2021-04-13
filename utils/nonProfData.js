@@ -3,7 +3,6 @@ export const nonprofs = {
         { 
             id: 0,
             title: 'Web Development for PI180 Website',
-            role: 'Web Developer',
             company: 'Project Impact 180',
             descrip: 'We need help building our website',
             industry: 'Community Leadership',
@@ -12,7 +11,6 @@ export const nonprofs = {
         {
             id: 1,
             title: 'Update Ongoing Classes',
-            role: 'Website Maintenance',
             company: 'We All Code',
             descrip: 'Help us maintain our weekly classes by integrating the information from our schedule into the website each week',
             industry: 'Education',
@@ -21,20 +19,20 @@ export const nonprofs = {
         {
             id: 2,
             title: 'Scholarship/Career Search',
-            role: 'Project Developer',
             company: 'Evanston Church',
             descrip: 'Help us build a platform to match our students with scholarships to apply for',
-            industry: 'Education, Church Group',
+            industry: 'Religion',
             length: 0,
             languages: null
         }
     ]
 };
 
-export const jobs = {
+export const jobArray = {
     jobs: [
         {
             companyId: 0,
+            role: 'Web Design',
             title: 'Frontend Developer',
             descrip: `We need someone who is comfortable as a frontend developer. 
                     HTML/JS/CSS are required skills. Familiarity with React and Bootstrap (or similar)
@@ -45,6 +43,7 @@ export const jobs = {
         },
         {
             companyId: 0,
+            role: 'Backend Development',
             title: 'Backend Developer',
             descrip: `Looking for somebody to build and maintain the backend 
                     database for our website. Familiarity with C/C++ and SQL are recommended.`,
@@ -54,6 +53,7 @@ export const jobs = {
         },
         {
             companyId: 1,
+            role: 'Web Development',
             title: 'Full-Stack Web Developer',
             descrip: `We are looking for somebody who is comfortable with full-stack web development. 
                     Our app currently uses React on the frontend & Django on the backend, so familiarity 
@@ -65,6 +65,7 @@ export const jobs = {
         },
         {
             companyId: 1,
+            role: 'Web Development',
             title: 'Android Developer',
             descrip: `Seeking an Android developer proficient in Kotlin. Industry and/or relevant project
                     experience preferred.`,
@@ -74,6 +75,7 @@ export const jobs = {
         },
         {
             companyId: 1,
+            role: 'Web Development',
             title: 'iOS Developer',
             descrip: `Searching for an iOS developer with significant experience in Swift and/or Objective-C.
                     Please reach out with a portfolio of prior iOS (or mobile) projects.`,
@@ -83,6 +85,7 @@ export const jobs = {
         },
         {
             companyId: 2,
+            role: 'Web Design',
             title: 'Web Designer',
             descrip: `We are looking for somebody to build a website to match students with 
                     appropriate scholarship. Tech-stack is currently undecided, but we are thinking
@@ -94,7 +97,8 @@ export const jobs = {
         },
         {
             companyId: 2,
-            title: 'Mobile Developer',
+            role: 'Backend Development',
+            title: 'Backend Mobile Developer',
             descrip: `Searching for a developer proficient in React Native (goal is to deploy
                     to both iOS and Android efficiently). Ideal candidate will be familiar with React/React Native,
                     TypeScript, JavaScript, React Hooks, and Redux.`,
