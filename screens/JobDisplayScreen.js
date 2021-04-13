@@ -19,23 +19,30 @@ const JobDisplayScreen = ({ route, navigation }) => {
     'pref4': "",
   }
 
-  switch (selections['pref1']) {
+  switch (parseInt(selections['pref1'])) {
     case 0:
-      prefDict['pref1'] = "Web Design"
+      prefDict['pref1'] = "Web Design";
+      break;
     case 1:
-      prefDict['pref1'] = "Web Development"
+      prefDict['pref1'] = "Web Development";
+      break;
     default:
-      prefDict['pref1'] = "Backend Development"
+      prefDict['pref1'] = "Backend Development";
   }
 
-  switch (selections['pref2']) {
+  switch (parseInt(selections['pref2'])) {
     case 0:
-      prefDict['pref2'] = "Community Leadership"
+      prefDict['pref2'] = "Community Leadership";
+      break;
     case 1:
-      prefDict['pref2'] = "Education"
+      prefDict['pref2'] = "Education";
+      break;
     default:
-      prefDict['pref2'] = "Religion"
+      prefDict['pref2'] = "Religion";
   }
+
+  prefDict['pref3'] = selections['pref3'];
+  prefDict['pref4'] = selections['pref4'];
 
   const [search, updateSearch] = useState('')
 

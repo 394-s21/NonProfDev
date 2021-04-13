@@ -17,7 +17,7 @@ const Job = ({ job, view, prefs }) => {
   var matched = (prefs['pref1'] === job.role) || 
                 (prefs['pref2'] === nonprofs.nonprofits[job.companyId].industry) ||
                 (prefs['pref3'] === nonprofs.nonprofits[job.companyId].length) ||
-                (prefs['pref1'] === job.weeklyTime);
+                (prefs['pref4'] === job.weeklyTime);
 
   return (
     <TouchableOpacity
