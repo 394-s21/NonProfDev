@@ -6,21 +6,14 @@ import {
   View,
   Dimensions,
 } from 'react-native'
-import { nonprofs } from '../utils/nonProfData'
+import { nonProfsData } from '../utils/nonProfData'
 
-// TODO: avatar/profile picture is currently hardcoded
-const Job = ({ job, view, prefs }) => {
+const Job = ({ job, view, matched }) => {
   // TODO: maybe scale the font size based on the screen width/height?
   const scaleFont = () => {
     const width = Dimensions.get('window').width
     return width > 500 ? 16 : 12
   }
-
-  var matched =
-    prefs['pref1'] === job.role ||
-    prefs['pref2'] === nonprofs.nonprofits[job.companyId].industry ||
-    prefs['pref3'] === nonprofs.nonprofits[job.companyId].length ||
-    prefs['pref4'] === job.weeklyTime
 
   return (
     <TouchableOpacity
@@ -32,7 +25,7 @@ const Job = ({ job, view, prefs }) => {
       <View style={styles.jobInfo}>
         <Text style={styles.jobName}>{job.title}</Text>
         <Text style={styles.jobCompany}>{companyParser(job.companyId)}</Text>
-        <Text style={styles.jobTime}>{timeParser(job.weeklyTime)}</Text>
+        <Text style={styles.jobTime}>{job.weeklyTime}</Text>
       </View>
     </TouchableOpacity>
   )
@@ -49,11 +42,11 @@ const timeParser = (timeInt) => {
 }
 
 const companyParser = (companyInt) => {
-  return nonprofs.nonprofits[companyInt].company
+  return nonProfsData.nonprofits[companyInt].company
 }
 
 const industryParser = (companyInt) => {
-  return nonprofs.nonprofits[companyInt].industry
+  return nonProfsData.nonprofits[companyInt].industry
 }
 
 const styles = StyleSheet.create({

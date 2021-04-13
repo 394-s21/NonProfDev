@@ -1,4 +1,4 @@
-export const nonprofs = {
+export const nonProfsData = {
   nonprofits: [
     {
       id: 0,
@@ -6,7 +6,7 @@ export const nonprofs = {
       company: 'Project Impact 180',
       descrip: 'We need help building our website',
       industry: 'Community Leadership',
-      length: 2, // 0: <1 month, 1: 1-3 months, 2: 3+ months
+      length: '3+ Months', // 0: <1 month, 1: 1-3 months, 2: 3+ months
     },
     {
       id: 1,
@@ -15,7 +15,7 @@ export const nonprofs = {
       descrip:
         'Help us maintain our weekly classes by integrating the information from our schedule into the website each week',
       industry: 'Education',
-      length: 2,
+      length: '3+ Months',
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export const nonprofs = {
       descrip:
         'Help us build a platform to match our students with scholarships to apply for',
       industry: 'Religion',
-      length: 0,
+      length: 'One Month or Shorter',
       languages: null,
     },
   ],
@@ -40,7 +40,7 @@ export const jobArray = {
                     HTML/JS/CSS are required skills. Familiarity with React and Bootstrap (or similar)
                     would be helpful!`,
       prereqs: null,
-      weeklyTime: 1, // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
+      weeklyTime: '5 Hours or Fewer', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['JS', 'CSS', 'HTML'],
     },
     {
@@ -50,7 +50,7 @@ export const jobArray = {
       descrip: `Looking for somebody to build and maintain the backend 
                     database for our website. Familiarity with C/C++ and SQL are recommended.`,
       prereqs: null,
-      weeklyTime: 1, // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
+      weeklyTime: '5-10 Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['C', 'C++', 'SQL'],
     },
     {
@@ -62,7 +62,7 @@ export const jobArray = {
                     with these frameworks would be preferred. Additional bonus if currently pursuing 
                     a bachelor's or advanced degree in CS or a related field.`,
       prereqs: null,
-      weeklyTime: 2, // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
+      weeklyTime: '10+ Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: null,
     },
     {
@@ -72,7 +72,7 @@ export const jobArray = {
       descrip: `Seeking an Android developer proficient in Kotlin. Industry and/or relevant project
                     experience preferred.`,
       prereqs: null,
-      weeklyTime: 1, // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
+      weeklyTime: '5-10 Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['Java', 'XML'],
     },
     {
@@ -82,7 +82,7 @@ export const jobArray = {
       descrip: `Searching for an iOS developer with significant experience in Swift and/or Objective-C.
                     Please reach out with a portfolio of prior iOS (or mobile) projects.`,
       prereqs: null,
-      weeklyTime: 1, // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
+      weeklyTime: '5-10 Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['Swift', 'Objective-C'],
     },
     {
@@ -94,7 +94,7 @@ export const jobArray = {
                     React or Angular on the frontend & Node.js on the backend. Added bonus if currently pursuing
                     a bachelor's or advanced degree in CS.`,
       prereqs: null,
-      weeklyTime: 2, // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
+      weeklyTime: '10+ Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['HTML', 'JS', 'CSS'],
     },
     {
@@ -105,7 +105,7 @@ export const jobArray = {
                     to both iOS and Android efficiently). Ideal candidate will be familiar with React/React Native,
                     TypeScript, JavaScript, React Hooks, and Redux.`,
       prereqs: null,
-      weeklyTime: 2, // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
+      weeklyTime: '10+ Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['HTML', 'JS', 'CSS', 'TypeScript'],
     },
   ],

@@ -1,139 +1,90 @@
 import React, { useState, useEffect } from 'react'
-import {
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  SafeAreaView,
-} from 'react-native'
-import PreferenceButton from '../components/PreferenceButton'
+import { StatusBar, StyleSheet, View, Button, SafeAreaView } from 'react-native'
+import PreferenceGroup from '../components/PreferenceGroup'
 import { ScrollView } from 'react-native-gesture-handler'
 
-// Original home screen
-// Currently not used
-const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
-  const [selections, setSelections] = useState({
-    pref1: 0,
-    pref2: 0,
-    pref3: 0,
-    pref4: 0,
+// Preference data hardcoded for now, substitute for db call later
+const preferenceData = [
+  {
+    id: 'role',
+    title: 'Primary Skillset/Desired Role',
+    options: ['Web Design', 'Web Development', 'Backend Development'],
+  },
+  {
+    id: 'industry',
+    title: 'Primary Field of Interest',
+    options: ['Community Leadership', 'Education', 'Religion'],
+  },
+  {
+    id: 'length',
+    title: 'Project Length',
+    options: ['One Month or Shorter', '1-3 Months (One Quarter)', '3+ Months'],
+  },
+  {
+    id: 'weeklyTime',
+    title: 'Weekly Commitment',
+    options: ['5 Hours or Fewer', '5-10 Hours', '10+ Hours'],
+  },
+]
+
+/**
+ * Creates a selection object with
+ *   key = preference title
+ *   value = boolean array of length options
+ */
+const initSelections = (preferenceData) => {
+  const obj = {}
+  preferenceData.map((v) => {
+    const a = new Array(v.options.length)
+    for (let i = 0; i < v.options.length; ++i) a[i] = false
+    obj[v.id] = a
   })
+  return obj
+}
 
-  const handleClick = (prefNum, prefValue) => {
-    const newSelections = { ...selections }
-    newSelections[prefNum] = prefValue
+/**
+ * Convert selections object to map of preferences
+ */
+const getPreferences = (preferenceData, selections) => {
+  const obj = {}
+  preferenceData.map((prefObj) => {
+    const mask = selections[prefObj.id]
+    obj[prefObj.id] = prefObj.options.filter((_, i) => mask[i])
+  })
+  return obj
+}
 
-    setSelections(newSelections)
+const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
+  const [selections, setSelections] = useState(initSelections(preferenceData))
+
+  const handleSelect = (id, i) => {
+    //const newSelections = { ...selections }
+    const tmp = selections[id]
+    tmp[i] = !tmp[i]
+    setSelections((selections) => ({ ...selections, id: tmp }))
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Text h1 style={styles.h1_text}>
-          Primary Skillset/Desired Role
-        </Text>
-        <PreferenceButton
-          select={() => handleClick('pref1', 0)}
-          buttonText={'Web Design'}
-          isSelected={selections['pref1'] === 0}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref1', 1)}
-          buttonText={'Web Development'}
-          isSelected={selections['pref1'] === 1}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref1', 2)}
-          buttonText={'Backend Development'}
-          isSelected={selections['pref1'] === 2}
-        >
-          {' '}
-        </PreferenceButton>
-        <Text h1 style={styles.h1_text}>
-          Primary Field of Interest
-        </Text>
-        <PreferenceButton
-          select={() => handleClick('pref2', 0)}
-          buttonText={'Community Leadership'}
-          isSelected={selections['pref2'] === 0}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref2', 1)}
-          buttonText={'Education'}
-          isSelected={selections['pref2'] === 1}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref2', 2)}
-          buttonText={'Religion'}
-          isSelected={selections['pref2'] === 2}
-        >
-          {' '}
-        </PreferenceButton>
-        <Text h1 style={styles.h1_text}>
-          Project Length
-        </Text>
-        <PreferenceButton
-          select={() => handleClick('pref3', 0)}
-          buttonText={'One Month or Shorter'}
-          isSelected={selections['pref3'] === 0}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref3', 1)}
-          buttonText={'1-3 Months (One Quarter)'}
-          isSelected={selections['pref3'] === 1}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref3', 2)}
-          buttonText={'3+ Months'}
-          isSelected={selections['pref3'] === 2}
-        >
-          {' '}
-        </PreferenceButton>
-        <Text h1 style={styles.h1_text}>
-          Weekly Commitment
-        </Text>
-        <PreferenceButton
-          select={() => handleClick('pref4', 0)}
-          buttonText={'5 Hours or Fewer'}
-          isSelected={selections['pref4'] === 0}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref4', 1)}
-          buttonText={'5-10 Hours'}
-          isSelected={selections['pref4'] === 1}
-        >
-          {' '}
-        </PreferenceButton>
-        <PreferenceButton
-          select={() => handleClick('pref4', 2)}
-          buttonText={'10+ Hours'}
-          isSelected={selections['pref4'] === 2}
-        >
-          {' '}
-        </PreferenceButton>
+        {preferenceData.map((v, i) => (
+          <PreferenceGroup
+            key={i}
+            title={v.title}
+            options={v.options}
+            toggleSelect={(i) => handleSelect(v.id, i)}
+            selection={selections[v.id]}
+          />
+        ))}
 
         <View style={styles.roleButton}>
           <Button
             title="Submit Preferences"
-            onPress={() =>
-              navigation.navigate('JobDisplayScreen', { selections })
-            }
-          ></Button>
+            onPress={() => {
+              const preferences = getPreferences(preferenceData, selections)
+              navigation.navigate('JobListScreen', { preferences })
+            }}
+          />
         </View>
 
         <StatusBar style="auto" />
@@ -150,13 +101,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  userContainer: {
-    flex: 1,
-    alignItems: 'center',
-  },
-
   h1_text: {
-    fontSize: 48,
+    fontSize: 36,
     marginBottom: 25,
   },
   h3_text: {
