@@ -25,6 +25,7 @@ export const nonProfsData = {
         'Help us build a platform to match our students with scholarships to apply for',
       industry: 'Religion',
       length: 'One Month or Shorter',
+      languages: null,
     },
   ],
 }
@@ -35,7 +36,9 @@ export const jobArray = {
       companyId: 0,
       role: 'Web Design',
       title: 'Frontend Developer',
-      descrip: `We need someone who is comfortable as a frontend developer. HTML/JS/CSS are required skills. Familiarity with React and Bootstrap (or similar) would be helpful!`,
+      descrip: `We need someone who is comfortable as a frontend developer. 
+                    HTML/JS/CSS are required skills. Familiarity with React and Bootstrap (or similar)
+                    would be helpful!`,
       prereqs: null,
       weeklyTime: '5 Hours or Fewer', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['JS', 'CSS', 'HTML'],
@@ -44,7 +47,8 @@ export const jobArray = {
       companyId: 0,
       role: 'Backend Development',
       title: 'Backend Developer',
-      descrip: `Looking for somebody to build and maintain the backend database for our website. Familiarity with C/C++ and SQL are recommended.`,
+      descrip: `Looking for somebody to build and maintain the backend 
+                    database for our website. Familiarity with C/C++ and SQL are recommended.`,
       prereqs: null,
       weeklyTime: '5-10 Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['C', 'C++', 'SQL'],
@@ -53,7 +57,10 @@ export const jobArray = {
       companyId: 1,
       role: 'Web Development',
       title: 'Full-Stack Web Developer',
-      descrip: `We are looking for somebody who is comfortable with full-stack web development. Our app currently uses React on the frontend & Django on the backend, so familiarity with these frameworks would be preferred. Additional bonus if currently pursuing a bachelor's or advanced degree in CS or a related field.`,
+      descrip: `We are looking for somebody who is comfortable with full-stack web development. 
+                    Our app currently uses React on the frontend & Django on the backend, so familiarity 
+                    with these frameworks would be preferred. Additional bonus if currently pursuing 
+                    a bachelor's or advanced degree in CS or a related field.`,
       prereqs: null,
       weeklyTime: '10+ Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: null,
@@ -62,7 +69,8 @@ export const jobArray = {
       companyId: 1,
       role: 'Web Development',
       title: 'Android Developer',
-      descrip: `Seeking an Android developer proficient in Kotlin. Industry and/or relevant project experience preferred.`,
+      descrip: `Seeking an Android developer proficient in Kotlin. Industry and/or relevant project
+                    experience preferred.`,
       prereqs: null,
       weeklyTime: '5-10 Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['Java', 'XML'],
@@ -71,7 +79,8 @@ export const jobArray = {
       companyId: 1,
       role: 'Web Development',
       title: 'iOS Developer',
-      descrip: `Searching for an iOS developer with significant experience in Swift and/or Objective-C. Please reach out with a portfolio of prior iOS (or mobile) projects.`,
+      descrip: `Searching for an iOS developer with significant experience in Swift and/or Objective-C.
+                    Please reach out with a portfolio of prior iOS (or mobile) projects.`,
       prereqs: null,
       weeklyTime: '5-10 Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['Swift', 'Objective-C'],
@@ -80,7 +89,10 @@ export const jobArray = {
       companyId: 2,
       role: 'Web Design',
       title: 'Web Designer',
-      descrip: `We are looking for somebody to build a website to match students with appropriate scholarship. Tech-stack is currently undecided, but we are thinking React or Angular on the frontend & Node.js on the backend. Added bonus if currently pursuing a bachelor's or advanced degree in CS.`,
+      descrip: `We are looking for somebody to build a website to match students with 
+                    appropriate scholarship. Tech-stack is currently undecided, but we are thinking
+                    React or Angular on the frontend & Node.js on the backend. Added bonus if currently pursuing
+                    a bachelor's or advanced degree in CS.`,
       prereqs: null,
       weeklyTime: '10+ Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['HTML', 'JS', 'CSS'],
@@ -89,7 +101,9 @@ export const jobArray = {
       companyId: 2,
       role: 'Backend Development',
       title: 'Backend Mobile Developer',
-      descrip: `Searching for a developer proficient in React Native (goal is to deploy to both iOS and Android efficiently). Ideal candidate will be familiar with React/React Native, TypeScript, JavaScript, React Hooks, and Redux.`,
+      descrip: `Searching for a developer proficient in React Native (goal is to deploy
+                    to both iOS and Android efficiently). Ideal candidate will be familiar with React/React Native,
+                    TypeScript, JavaScript, React Hooks, and Redux.`,
       prereqs: null,
       weeklyTime: '10+ Hours', // 0: <5 hrs/week, 1: 5-10 hrs, 2: 10+ hrs
       languages: ['HTML', 'JS', 'CSS', 'TypeScript'],
