@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
-import { StatusBar, StyleSheet, Text, View, Button,} from 'react-native'
+import { StatusBar, StyleSheet, Text, View, Button, SafeAreaView, } from 'react-native'
 import PreferenceButton from '../components/PreferenceButton'
+import { ScrollView } from 'react-native-gesture-handler'
 
 // Original home screen
 // Currently not used
@@ -20,7 +21,8 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
       <Text h1 style={styles.h1_text}>
         Primary Skillset/Desired Role
       </Text>
@@ -51,7 +53,10 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
       </View>
       
       <StatusBar style="auto" />
-    </View>
+
+      </ScrollView>
+      
+    </SafeAreaView>
   )
 }
 
