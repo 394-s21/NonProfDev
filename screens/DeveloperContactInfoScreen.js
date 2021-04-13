@@ -1,4 +1,5 @@
-import React from 'react'
+import { setStatusBarNetworkActivityIndicatorVisible } from 'expo-status-bar';
+import React, { useState } from 'react'
 import { SafeAreaView, 
         StyleSheet, 
         Text, 
@@ -6,6 +7,7 @@ import { SafeAreaView,
         TouchableOpacity, 
         Image } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
+import Form from '../components/Form';
 
 const Field = ({ label, value }) => {
   return (
@@ -17,18 +19,33 @@ const Field = ({ label, value }) => {
 }
 
 const DeveloperContactInfoScreen = ({ route, navigation }) => {
+
+  const [messageSent, setMessageSent] = useState(false);
+  
+  const view = () => {
+      setMessageSent(true)
+  }
+
   const developer = route.params.developer
+
+  const placeholder = "Enter message to "+ developer.name
   return (
     <SafeAreaView style={styles.container}>
        
-      <Text label="Name" style={styles.developerName}>Contact {developer.name} </Text>
-      <ScrollView>
-        <Field label="Messsage" value={developer.location} style={styles.developerLocation}/>
-      </ScrollView>
-      
-      <TouchableOpacity style={styles.connectButton}>
-        <Text style={styles.connectText}>Send Message</Text>
-      </TouchableOpacity>
+      { !messageSent && <Text label="Name" style={styles.developerName}>Contact {developer.name} </Text>}
+        
+      { messageSent ?  
+        <Text label="Name" style={styles.developerName}>Message succesfully sent to {developer.name}! </Text> 
+        : 
+        <ScrollView>
+            <Form initialValues={{message: "" }}>
+                <Form.Field name="message" leftIcon="inbox" placeholder={placeholder} autoCapitalize="none" autoFocus={true} multiline={true} numberOfLines={20}/>
+                    
+            </Form>
+            <TouchableOpacity style={styles.connectButton} onPress={() => view()}>
+                <Text style={styles.connectText}>Send Message</Text>
+            </TouchableOpacity>
+      </ScrollView>   }
     </SafeAreaView>
   )
 }
