@@ -88,7 +88,7 @@ const JobDisplayScreen = ({ route, navigation }) => {
 
   // View job detail
   const view = (job) => {
-    navigation.navigate('JobProfileScreen', { job })
+    navigation.navigate('JobDetailScreen', { job })
   }
 
   return (

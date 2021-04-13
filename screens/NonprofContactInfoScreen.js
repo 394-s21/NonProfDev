@@ -1,44 +1,30 @@
 import React, { useState } from 'react'
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native'
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Form from '../components/Form'
 
-const Field = ({ label, value }) => {
-  return (
-    <View style={styles.fieldContainer}>
-      <Text style={styles.label}>{label}</Text>
-      <Text style={styles.field}>{value}</Text>
-    </View>
-  )
-}
-
-const DeveloperContactInfoScreen = ({ route, navigation }) => {
+const NonprofContactInfoScreen = ({ route, navigation }) => {
   const [messageSent, setMessageSent] = useState(false)
 
   const view = () => {
     setMessageSent(true)
   }
 
-  const developer = route.params.developer
+  const nonprof = route.params.nonprof
+  const nonprofName = nonprof.company
 
-  const placeholder = 'Enter message to ' + developer.name
+  const placeholder = 'Enter message to ' + nonprofName
   return (
     <SafeAreaView style={styles.container}>
       {!messageSent && (
-        <Text label="Name" style={styles.developerName}>
-          Contact {developer.name}{' '}
+        <Text label="Name" style={styles.name}>
+          Contact {nonprofName}
         </Text>
       )}
 
       {messageSent ? (
-        <Text label="Name" style={styles.developerName}>
-          Message succesfully sent to {developer.name}!{' '}
+        <Text label="Name" style={styles.name}>
+          Message succesfully sent to {nonprofName}!
         </Text>
       ) : (
         <ScrollView>
@@ -83,7 +69,7 @@ const styles = StyleSheet.create({
   label: {
     fontWeight: 'bold',
   },
-  developerName: {
+  name: {
     fontSize: 24,
     marginBottom: 10,
     marginLeft: 'auto',
@@ -110,4 +96,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default DeveloperContactInfoScreen
+export default NonprofContactInfoScreen
