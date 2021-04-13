@@ -11,10 +11,28 @@ const Banner = ({ title }) => (
 
 const JobDisplayScreen = ({ route, navigation }) => {
   const preferences = route.params.preferences
+  console.log(preferences);
+
   //const [search, updateSearch] = useState('')
 
   // Currently hardcoded data
   const [jobs, setJobs] = useState(jobArray.jobs)
+
+  // As long as one criteria matches, consider the job a match
+  // Also include number of criteria that match in case we might want to rank ...
+  // ... the jobs later on
+  const isMatchBasic = (job) => {
+    let nonprofit = nonProfsData.nonprofits[job.companyId];
+
+    let matches = [preferences['industry'].includes(nonprofit.industry),
+                  preferences['length'].includes(nonprofit.length),
+                  preferences['role'].includes(job.role),
+                  preferences['weeklyTime'].includes(job.weeklyTime)
+    ];
+    
+    let numMatches = matches.filter(match => match).length;
+    return numMatches > 0;
+  };
 
   // Hacky match. TODO: Fix later! This is a classic AI pattern matching problem...
   const isMatch = (job) => {
@@ -47,11 +65,11 @@ const JobDisplayScreen = ({ route, navigation }) => {
   }
 
   const getOrderedJobs = (jobs) => {
-    const matchedJobs = []
-    const otherJobs = []
+    let matchedJobs = []
+    let otherJobs = []
 
     jobs.map((job) => {
-      if (isMatch(job)) {
+      if (isMatchBasic(job)) { // Use the basic matching algorithm for now
         matchedJobs.push(job)
       } else {
         otherJobs.push(job)
