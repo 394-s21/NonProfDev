@@ -8,6 +8,7 @@ import DeveloperProfileScreen from './screens/DeveloperProfileScreen'
 import ChooseAppViewScreen from './screens/ChooseAppViewScreen'
 import DeveloperPreferenceSelectionScreen from './screens/DeveloperPreferenceSelectionScreen'
 import DeveloperContactInfoScreen from './screens/DeveloperContactInfoScreen'
+import JobDisplayScreen from './screens/JobDisplayScreen'
 
 const Stack = createStackNavigator()
 
@@ -24,6 +25,11 @@ export default function App() {
           name="DeveloperPreferenceSelectionScreen"
           component={DeveloperPreferenceSelectionScreen}
           options={{ title: 'Preference Selection' }}
+        />
+        <Stack.Screen
+          name="JobDisplayScreen"
+          component={JobDisplayScreen}
+          options={{ title: 'Matched Jobs' }}
         />
         <Stack.Screen
           name="SearchScreen"
