@@ -98,7 +98,6 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
             style={styles.roleButton} 
             onPress={() => {
               const preferences = getPreferences(preferenceData, selections)
-              console.log("PRESSED")
               navigation.navigate('JobListScreen', { preferences })
             }}>
               <Text style={styles.submitButtonText}>Submit Preferences</Text>

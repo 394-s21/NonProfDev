@@ -68,11 +68,11 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'green',
     shadowColor: 'green',
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
     shadowOffset: {
       height: 2,
-      width: 2
+      width: 2,
     },
     // justifyContent: 'center',
     flexDirection: 'row',

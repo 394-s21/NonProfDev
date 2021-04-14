@@ -11,7 +11,7 @@ const Banner = ({ title }) => (
 
 const JobDisplayScreen = ({ route, navigation }) => {
   const preferences = route.params.preferences
-  console.log(preferences);
+  // console.log(preferences);
 
   //const [search, updateSearch] = useState('')
 
