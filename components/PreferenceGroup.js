@@ -21,6 +21,8 @@ const PreferenceGroup = ({ title, options, toggleSelect, selection }) => (
 const styles = StyleSheet.create({
   title: {
     fontSize: 32,
+    textAlign: 'center',
+    marginTop: 30,
   },
   buttonGroup: {
     flex: 1,

@@ -65,14 +65,23 @@ const styles = StyleSheet.create({
   jobMatched: {
     borderRadius: 5,
     borderStyle: 'solid',
-    borderWidth: 1,
-    borderColor: 'black',
+    borderWidth: 3,
+    borderColor: 'green',
+    shadowColor: 'green',
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    shadowOffset: {
+      height: 2,
+      width: 2
+    },
     // justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
     margin: 10,
     padding: 10,
-    backgroundColor: '#289C28',
+    // backgroundColor: '#289C28', // old (too dark) background color
+    // backgroundColor: '#90ee90', // new (maybe too light?) green color
+    backgroundColor: 'white',
   },
   jobInfo: {
     flexDirection: 'column',

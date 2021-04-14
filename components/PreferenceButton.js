@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     textAlign: 'center',
-    paddingTop: 10,
+    paddingTop: 12,
   },
   preferenceText: {
     flex: 1,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 20,
     textAlign: 'center',
-    paddingTop: 10,
+    paddingTop: 12,
   },
   preferenceButtonSelected: {
     ...preferenceButtonBase,

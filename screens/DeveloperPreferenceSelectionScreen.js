@@ -6,9 +6,10 @@ import {
   Text,
   View,
   Button,
+  TouchableOpacity,
 } from 'react-native'
 import PreferenceGroup from '../components/PreferenceGroup'
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import { ScrollView, /*TouchableOpacity*/ } from 'react-native-gesture-handler'
 
 // Preference data hardcoded for now, substitute for db call later
 const preferenceData = [
@@ -84,15 +85,24 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
           />
         ))}
 
-        <View style={styles.roleButton}>
-          <Button
+        <View style={styles.userContainer}>
+          {/* <Button
             style={styles.submitButtonText}
             title="Submit Preferences"
             onPress={() => {
               const preferences = getPreferences(preferenceData, selections)
               navigation.navigate('JobListScreen', { preferences })
             }}
-          />
+          /> */}
+          <TouchableOpacity
+            style={styles.roleButton} 
+            onPress={() => {
+              const preferences = getPreferences(preferenceData, selections)
+              console.log("PRESSED")
+              navigation.navigate('JobListScreen', { preferences })
+            }}>
+              <Text style={styles.submitButtonText}>Submit Preferences</Text>
+          </TouchableOpacity>
         </View>
 
         <StatusBar style="auto" />
@@ -115,7 +125,8 @@ const styles = StyleSheet.create({
   },
   h1_text: {
     fontSize: 24,
-    marginTop: 25,
+    marginTop: 30,
+    textAlign: 'center',
   },
   roleButton: {
     borderRadius: 3,
@@ -123,7 +134,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 24,
     marginTop: 45,
     marginBottom: 15,
     padding: 20,
