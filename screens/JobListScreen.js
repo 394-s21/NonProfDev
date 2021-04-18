@@ -65,11 +65,12 @@ const JobDisplayScreen = ({ route, navigation }) => {
   }
 
   const getOrderedJobs = (jobs) => {
+    
     let matchedJobs = []
     let otherJobs = []
 
     jobs.map((job) => {
-      if (isMatchBasic(job)) { // Use the basic matching algorithm for now
+      if (isMatchBasic(job) && matchedJobs.length < 0.5 * jobs.length) { // Use the basic matching algorithm for now
         matchedJobs.push(job)
       } else {
         otherJobs.push(job)

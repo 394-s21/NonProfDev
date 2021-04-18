@@ -1,10 +1,24 @@
 import React, { useState } from 'react'
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Form from '../components/Form'
 
 const NonprofContactInfoScreen = ({ route, navigation }) => {
   const [messageSent, setMessageSent] = useState(false)
+
+  const headOut = () => {
+    navigation.navigate('NonprofContactInfoScreen')
+  }
+
+  const letter = `Hi,
+
+  My name is ________, and I am a ___ year student developer interested in joining your project team. I am most interested in working as a  ______ . Your project particularly interests me because of _____Of course, I'd be happy to answer any questions or pass along additional information that might be helpful
+  
+  Thank you for your time and consideration, and I look forward to hearing back from you soon.
+  
+  Best,
+  ____________`
+  
 
   const view = () => {
     setMessageSent(true)
@@ -23,12 +37,17 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
       )}
 
       {messageSent ? (
+        <View>
         <Text label="Name" style={styles.name}>
           Message succesfully sent to {nonprofName}!
         </Text>
+        <TouchableOpacity style={styles.connectButton} onPress={() => view()}>
+            <Text style={styles.connectText}>View Non-Profit List</Text>
+        </TouchableOpacity>
+        </View>
       ) : (
         <ScrollView>
-          <Form initialValues={{ message: '' }}>
+          <Form initialValues={{ message: letter }}>
             <Form.Field
               name="message"
               leftIcon="inbox"
