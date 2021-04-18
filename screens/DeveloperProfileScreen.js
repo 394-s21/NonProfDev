@@ -27,6 +27,7 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
   const developer = route.params.developer
   return (
     <SafeAreaView style={styles.container}>
+      
       <Image style={styles.developerImage} source={{ uri: developer.pic }} />
       <Text label="Name" style={styles.developerName}>
         {' '}

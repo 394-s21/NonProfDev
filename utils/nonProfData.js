@@ -6,6 +6,8 @@ export const nonProfsData = {
       company: 'Project Impact 180',
       descrip: 'We need help building our website',
       industry: 'Community Leadership',
+      url: "https://www.facebook.com/ProjectImpact180/",
+      logo: "https://scontent.fdpa1-1.fna.fbcdn.net/v/t1.6435-9/86807013_111974643722545_1272070550302228480_n.png?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=AaNPh3GBwIMAX8pCo24&_nc_ht=scontent.fdpa1-1.fna&oh=8783917f4e282e940565a8ed0f8c2a72&oe=60A3327A",
       length: '3+ Months', // 0: <1 month, 1: 1-3 months, 2: 3+ months
     },
     {
@@ -15,6 +17,8 @@ export const nonProfsData = {
       descrip:
         'Help us maintain our weekly classes by integrating the information from our schedule into the website each week',
       industry: 'Education',
+      url: "https://www.weallcode.org/",
+      logo: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F131925775%2F93310981415%2F1%2Foriginal.20210324-154546?w=1000&auto=format%2Ccompress&q=75&sharp=10&rect=234%2C0%2C1490%2C745&s=651bac36a9695beabcdf528fdd3321d5",
       length: '3+ Months',
     },
     {
@@ -24,6 +28,8 @@ export const nonProfsData = {
       descrip:
         'Help us build a platform to match our students with scholarships to apply for',
       industry: 'Religion',
+      url: "https://www.evanstonchurchofgod.org/",
+      logo: "https://images.app.goo.gl/noYpGd9JuTKSvWef7",
       length: 'One Month or Shorter',
     },
   ],

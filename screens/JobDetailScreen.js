@@ -5,6 +5,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Image,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { nonProfsData } from '../utils/nonProfData'
@@ -26,11 +27,14 @@ const jobProps = {
 }
 
 const companyProps = {
+  logo: "Logo",
   company: 'Name',
   title: 'Project',
   descrip: 'Description',
   industry: 'Industry',
   length: 'Project Duration',
+  url: 'URL',
+  
 }
 
 const JobDetailScreen = ({ route, navigation }) => {
@@ -48,7 +52,6 @@ const JobDetailScreen = ({ route, navigation }) => {
       <Text label="Name" style={styles.name}>
         {job.title}
       </Text>
-
       <ScrollView>
         {Object.keys(jobProps).map(
           (key) =>
@@ -60,10 +63,13 @@ const JobDetailScreen = ({ route, navigation }) => {
           About the non-profit
         </Text>
         {Object.keys(companyProps).map(
-          (key) =>
-            nonprof[key] && (
-              <Field key={key} label={companyProps[key]} value={nonprof[key]} />
-            )
+          (key) => 
+          (<React.Fragment> 
+            {key==="logo" ? 
+            (<Image style={styles.developerImage} source={{ uri: nonprof["logo"]}} />):
+            <Field key={key} label={companyProps[key]} value={nonprof[key]} />}
+            </React.Fragment>)
+            
         )}
       </ScrollView>
 
@@ -122,6 +128,13 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     // fontWeight: 500,
+  },
+  developerImage: {
+    width: 200,
+    height: 200,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 10,
   },
 })
 
