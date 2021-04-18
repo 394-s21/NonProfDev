@@ -41,8 +41,12 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
         <Text label="Name" style={styles.name}>
           Message succesfully sent to {nonprofName}!
         </Text>
-        <TouchableOpacity style={styles.connectButton} onPress={() => view()}>
-            <Text style={styles.connectText}>View Non-Profit List</Text>
+        <TouchableOpacity style={styles.connectButton} 
+                          onPress={() => {
+                            view();
+                            navigation.navigate('JobListScreen')
+                          }}>
+            <Text style={styles.connectText}>Return to Non-Profit List</Text>
         </TouchableOpacity>
         </View>
       ) : (
