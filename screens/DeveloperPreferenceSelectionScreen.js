@@ -75,6 +75,7 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        <Text style={styles.h1_text}>Please select one or more preferences for each of the following:</Text>
         {preferenceData.map((v, i) => (
           <PreferenceGroup
             key={i}
