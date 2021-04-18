@@ -33,6 +33,12 @@ const preferenceData = [
     title: 'Weekly Commitment',
     options: ['5 Hours or Fewer', '5-10 Hours', '10+ Hours'],
   },
+  {
+    id: 'teamSize',
+    title: 'Team Size',
+    options: ['Solo', '2-3 Member Team', '3+ Member Team'],
+  },
+
 ]
 
 /**
