@@ -29,7 +29,7 @@ export const nonProfsData = {
         'Help us build a platform to match our students with scholarships to apply for',
       industry: 'Religion',
       url: "https://www.evanstonchurchofgod.org/",
-      logo: "https://images.app.goo.gl/noYpGd9JuTKSvWef7",
+      logo: "https://yt3.ggpht.com/ytc/AAUvwnhxZL0sPHcMNARADdd0O-oTGn-qcIvbrCXucz7n=s900-c-k-c0x00ffffff-no-rj",
       length: 'One Month or Shorter',
     },
   ],
