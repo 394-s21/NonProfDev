@@ -49,6 +49,22 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
           value={developer.skills.join(', ')}
           style={styles.developerSkills}
         />
+        <Text> Looking For: </Text>
+        <Field
+          label="Weekly Time Commitment"
+          value={mapWeeklyTime(developer.weeklyTime).join('\n')}
+          style={styles.developerSkills}
+        />
+        <Field
+          label="Project Length Commitment"
+          value={mapProjectLength(developer.projectLength).join('\n')}
+          style={styles.developerSkills}
+        />
+        <Field
+          label="Desired Team Size"
+          value={mapTeamSize(developer.teamSize).join('\n')}
+          style={styles.developerSkills}
+        />
       </ScrollView>
 
       <TouchableOpacity
@@ -59,6 +75,39 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
       </TouchableOpacity>
     </SafeAreaView>
   )
+}
+
+const weeklyTimes = ["Less Than 5 Hours Per Week", "5-10 Hours Per Week", "10+ Hours Per Week"]
+
+const mapWeeklyTime = (devTime) =>  {
+  var returnArr = [];
+  for (var i=0; i < devTime.length; i++) {
+    returnArr.push(weeklyTimes[devTime[i]])
+  }
+  
+  return returnArr;
+}
+
+const projectLengths = ["Less Than 1 Month", "1-3 Months", "3+ Months"]
+
+const mapProjectLength = (projTime) =>  {
+  var returnArr = [];
+  for (var i=0; i < projTime.length; i++) {
+    returnArr.push(projectLengths[projTime[i]])
+  }
+  
+  return returnArr;
+}
+
+const teamSizes = ["Solo", "2-3 Member Team", "3+ Member Team"]
+
+const mapTeamSize = (teamSize) =>  {
+  var returnArr = [];
+  for (var i=0; i < teamSize.length; i++) {
+    returnArr.push(teamSizes[teamSize[i]])
+  }
+  
+  return returnArr;
 }
 
 const styles = StyleSheet.create({
