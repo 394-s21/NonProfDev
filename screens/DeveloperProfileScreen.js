@@ -34,23 +34,26 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
         {developer.name}{' '}
       </Text>
       <ScrollView>
+        <Text style={styles.developerLocation}> 
+          {developer.location} 
+        </Text>
+        <Text style={styles.developerRole}>
+          {developer.role}
+        </Text>
+        {/* <Text style={styles.developerBio}>
+          {developer.Bio}
+        </Text> */}
         <Field
-          label="Location"
-          value={developer.location}
-          style={styles.developerLocation}
-        />
-        <Field label="Bio" value={developer.Bio} style={styles.developerBio} />
-        <Field
-          label="Role"
-          value={developer.role}
-          style={styles.developerRole}
+          label="Bio"
+          value={developer.Bio}
+          style={styles.developerBio}
         />
         <Field
           label="Skills"
           value={developer.skills.join(', ')}
           style={styles.developerSkills}
         />
-        <Text> Looking For: </Text>
+        <Text style={styles.headerText}> - Looking For - </Text>
         <Field
           label="Weekly Time Commitment"
           value={mapWeeklyTime(developer.weeklyTime).join('\n')}
@@ -132,11 +135,32 @@ const styles = StyleSheet.create({
   label: {
     fontWeight: 'bold',
   },
-  developerName: {
-    fontSize: 24,
+  headerText: {
+    // fontWeight: 'bold',
+    textAlign: 'center',
+    // textDecorationLine: 'underline',
+    fontSize: 22,
     marginBottom: 10,
+  },
+  developerName: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    marginBottom: 5,
     marginLeft: 'auto',
     marginRight: 'auto',
+  },
+  developerLocation: {
+    textAlign: 'center',
+    fontSize: 18,
+  },
+  developerRole: {
+    textAlign: 'center',
+    fontStyle: 'italic',
+    marginBottom: 10,
+    fontSize: 16,
+  },
+  developerBio: {
+    textAlign: 'center',
   },
   developerImage: {
     width: 200,
