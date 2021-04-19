@@ -7,7 +7,7 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
   const [messageSent, setMessageSent] = useState(false)
 
   const headOut = () => {
-    navigation.navigate('NonprofContactInfoScreen')
+    navigation.navigate('JobListScreen')
   }
 
   const letter = `Hi,
@@ -44,7 +44,7 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
         <TouchableOpacity style={styles.connectButton} 
                           onPress={() => {
                             view();
-                            navigation.navigate('JobListScreen')
+                            headOut()
                           }}>
             <Text style={styles.connectText}>Return to Non-Profit List</Text>
         </TouchableOpacity>
