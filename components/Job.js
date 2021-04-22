@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useContext } from 'react'
 import {
   StyleSheet,
   Text,
@@ -6,14 +6,21 @@ import {
   View,
   Dimensions,
 } from 'react-native'
-import { nonProfsData } from '../utils/nonProfData'
 
-const Job = ({ job, view, matched }) => {
+const Job = ({ job, view, matched, nonProfit }) => {
   // TODO: maybe scale the font size based on the screen width/height?
   const scaleFont = () => {
     const width = Dimensions.get('window').width
     return width > 500 ? 16 : 12
   }
+
+  const companyParser = (id) => {
+    return id in nonProfits ? nonProfits[id].company : id
+  }
+
+  //const industryParser = (companyInt) => {
+  //return nonProfsData.nonprofits[companyInt].industry
+  //}
 
   return (
     <TouchableOpacity
@@ -24,7 +31,9 @@ const Job = ({ job, view, matched }) => {
     >
       <View style={styles.jobInfo}>
         <Text style={styles.jobName}>{job.title}</Text>
-        <Text style={styles.jobCompany}>{companyParser(job.companyId)}</Text>
+        <Text style={styles.jobCompany}>
+          {'company' in nonProfit ? nonProfit.company : job.companyId}
+        </Text>
         <Text style={styles.jobTime}>{job.weeklyTime}</Text>
       </View>
     </TouchableOpacity>
@@ -39,14 +48,6 @@ const timeParser = (timeInt) => {
   } else {
     return '10+ hrs/week'
   }
-}
-
-const companyParser = (companyInt) => {
-  return nonProfsData.nonprofits[companyInt].company
-}
-
-const industryParser = (companyInt) => {
-  return nonProfsData.nonprofits[companyInt].industry
 }
 
 const styles = StyleSheet.create({

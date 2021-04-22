@@ -1,7 +1,7 @@
 export const data = {
   developers: [
     {
-      id: 0,
+      id: 'mark',
       name: 'Mark',
       role: 'Computer Science Student at Northwestern University',
       location: 'Evanston',
@@ -14,7 +14,7 @@ export const data = {
       teamSize: [0], // 0: Solo, 1: 2-3 ppl, 2: 3+ ppl
     },
     {
-      id: 1,
+      id: 'allison',
       name: 'Allison',
       role: 'Computer Science Student at Stanford University',
       location: 'San Francisco',
@@ -29,7 +29,7 @@ export const data = {
       teamSize: [1], // 0: Solo, 1: 2-3 ppl, 2: 3+ ppl
     },
     {
-      id: 2,
+      id: 'josh',
       name: 'Josh',
       role: 'Computer Science Student at University of Chicago',
       location: 'Chicago',
@@ -44,7 +44,7 @@ export const data = {
       teamSize: [2], // 0: Solo, 1: 2-3 ppl, 2: 3+ ppl
     },
     {
-      id: 3,
+      id: 'michelle',
       name: 'Michelle',
       role: 'Computer Science Student at Northwestern University',
       location: 'Evanston',
@@ -74,7 +74,7 @@ export const data = {
       teamSize: [0], // 0: Solo, 1: 2-3 ppl, 2: 3+ ppl
     },
     {
-      id: 5,
+      id: 'linus',
       name: 'Linus',
       role: 'Computer Science Student at Northwestern University',
       location: 'Evanston',
@@ -88,7 +88,7 @@ export const data = {
       teamSize: [1], // 0: Solo, 1: 2-3 ppl, 2: 3+ ppl
     },
     {
-      id: 6,
+      id: 'tiger',
       name: 'Tiger',
       role: 'Computer Science Student at Northwestern University',
       location: 'Evanston',

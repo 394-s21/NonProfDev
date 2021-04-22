@@ -1,0 +1,200 @@
+{
+  "developers": {
+    "mark": {
+      "id": "mark",
+      "name": "Mark",
+      "role": "Computer Science Student at Northwestern University",
+      "location": "Evanston",
+      "skills": ["Java", "Python", "Databases"],
+      "pic": "https://pbs.twimg.com/profile_images/1422637130/mccigartrophy.jpg",
+      "Bio": "1st year CS major @ NU. Open to anything at the moment!",
+      "weeklyTime": [0, 1],
+      "projectLength": [0],
+      "interests": ["Education"],
+      "teamSize": [0]
+    },
+    "allison": {
+      "id": "allison",
+      "name": "Allison",
+      "role": "Computer Science Student at Stanford University",
+      "location": "San Francisco",
+      "skills": ["Golang", "C++", "Databases"],
+      "pic": "https://static.inspiremore.com/wp-content/uploads/2015/04/21050518/beyonce-the-gentlewoman.jpg",
+      "Bio": "1st year CS student @ Stanford. Primarily looking for backend roles, but open to anything!",
+      "weeklyTime": [1],
+      "projectLength": [2],
+      "interests": ["Religion", "Education"],
+      "teamSize": [1]
+    },
+    "josh": {
+      "id": "josh",
+      "name": "Josh",
+      "role": "Computer Science Student at University of Chicago",
+      "location": "Chicago",
+      "skills": ["JavaScript", "Python", "ML", "Databases"],
+      "pic": "https://assets.vogue.com/photos/59132f18dc6868483f55b55a/master/w_2560%2Cc_limit/00-lede-the-rock.jpg",
+      "Bio": "Junior CS major @ UChicago, looking to hone my ML skills with a relevant project.",
+      "weeklyTime": [1],
+      "projectLength": [1],
+      "interests": ["Community Leadership"],
+      "teamSize": [2]
+    },
+    "michelle": {
+      "id": "michelle",
+      "name": "Michelle",
+      "role": "Computer Science Student at Northwestern University",
+      "location": "Evanston",
+      "skills": ["Java", "Python", "React", "Databases"],
+      "pic": "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fblogs-images.forbes.com%2Fanneglusker%2Ffiles%2F2018%2F12%2FMichelle-Obama-book-cover-shot-e1544143689487-1200x944.jpg",
+      "Bio": "2nd year CS major @ NU - particularly interested in the intersection between tech & finance.",
+      "weeklyTime": [0],
+      "projectLength": [1],
+      "interests": ["Religion"],
+      "teamSize": [2]
+    },
+    "evelyn": {
+      "id": "evelyn",
+      "name": "Evelyn",
+      "role": "Computer Science Student at Northwestern University",
+      "location": "Evanston",
+      "skills": ["React", "JavaScript", "Databases", "Firebase"],
+      "pic": "https://thefader-res.cloudinary.com/private_images/c_limit,w_1024/c_crop,h_600,w_1019,x_5,y_91,f_auto,q_auto:eco/Taylor-Swift-_-Valheria-Rocha-1050x700_uulkcd/Taylor-Swift-_-Valheria-Rocha-1050x700_uulkcd.jpg",
+      "Bio": "Senior CS Major @ NU. Well versed in React/Firebase - looking for a demanding role to apply these skills",
+      "weeklyTime": [1],
+      "projectLength": [0],
+      "interests": ["Education", "Community Leadership"],
+      "teamSize": [0]
+    },
+    "linus": {
+      "id": "linus",
+      "name": "Linus",
+      "role": "Computer Science Student at Northwestern University",
+      "location": "Evanston",
+      "skills": ["Java", "Python", "Databases"],
+      "pic": "https://cdn.nba.com/manage/2020/10/lebron-james-lakers-687x588.jpg",
+      "Bio": "2nd year CS student @ NU. Primarily interested in front-end development.",
+      "weeklyTime": [2],
+      "projectLength": [2],
+      "interests": ["Education"],
+      "teamSize": [1]
+    },
+    "tiger": {
+      "id": "tiger",
+      "name": "Tiger",
+      "role": "Computer Science Student at Northwestern University",
+      "location": "Evanston",
+      "skills": ["Java", "JavaScript", "Python", "ML", "Databases"],
+      "pic": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Andrew_Yang_by_Gage_Skidmore.jpg",
+      "Bio": "Senior CS major @ NU. Open to any type of role: frontend, backend, full-stack, ML/AI, etc.",
+      "weeklyTime": [1],
+      "projectLength": [2],
+      "interests": ["Community Leadership", "Education", "Religion"],
+      "teamSize": [1]
+    }
+  },
+  "jobs": {
+    "project-impact-180-frontend-dev-1": {
+      "id": "project-impact-180-frontend-dev-1",
+      "companyId": "project-impact-180",
+      "role": "Web Design",
+      "title": "Frontend Developer",
+      "descrip": "We need someone who is comfortable as a frontend developer. HTML/JS/CSS are required skills. Familiarity with React and Bootstrap (or similar) would be helpful!",
+      "prereqs": null,
+      "weeklyTime": "5 Hours or Fewer",
+      "languages": ["JS", "CSS", "HTML"]
+    },
+    "project-impact-180-backend-dev-1": {
+      "id": "project-impact-180-backend-dev-1",
+      "companyId": "project-impact-180",
+      "role": "Backend Development",
+      "title": "Backend Developer",
+      "descrip": "Looking for somebody to build and maintain the backend database for our website. Familiarity with C/C++ and SQL are recommended.",
+      "prereqs": null,
+      "weeklyTime": "5-10 Hours",
+      "languages": ["C", "C++", "SQL"]
+    },
+    "we-all-code-backend-full-stack-1": {
+      "id": "we-all-code-backend-full-stack-1",
+      "companyId": "we-all-code",
+      "role": "Web Development",
+      "title": "Full-Stack Web Developer",
+      "descrip": "We are looking for somebody who is comfortable with full-stack web development. Our app currently uses React on the frontend & Django on the backend, so familiarity with these frameworks would be preferred. Additional bonus if currently pursuing a bachelor's or advanced degree in CS or a related field.",
+      "prereqs": null,
+      "weeklyTime": "10+ Hours",
+      "languages": null
+    },
+    "we-all-code-backend-android-1": {
+      "id": "we-all-code-backend-android-1",
+      "companyId": "we-all-code",
+      "role": "Web Development",
+      "title": "Android Developer",
+      "descrip": "Seeking an Android developer proficient in Kotlin. Industry and/or relevant project experience preferred.",
+      "prereqs": null,
+      "weeklyTime": "5-10 Hours",
+      "languages": ["Java", "XML"]
+    },
+    "we-all-code-backend-ios-1": {
+      "id": "we-all-code-backend-ios-1",
+      "companyId": "we-all-code",
+      "role": "Web Development",
+      "title": "iOS Developer",
+      "descrip": "Searching for an iOS developer with significant experience in Swift and/or Objective-C. Please reach out with a portfolio of prior iOS (or mobile) projects.",
+      "prereqs": null,
+      "weeklyTime": "5-10 Hours",
+      "languages": ["Swift", "Objective-C"]
+    },
+    "evanston-church-backend-design-1": {
+      "id": "evanston-church-backend-design-1",
+      "companyId": "evanston-church",
+      "role": "Web Design",
+      "title": "Web Designer",
+      "descrip": "We are looking for somebody to build a website to match students with appropriate scholarship. Tech-stack is currently undecided, but we are thinking React or Angular on the frontend & Node.js on the backend. Added bonus if currently pursuing a bachelor's or advanced degree in CS.",
+      "prereqs": null,
+      "weeklyTime": "10+ Hours",
+      "languages": ["HTML", "JS", "CSS"]
+    },
+    "evanston-church-backend-backend-1": {
+      "id": "evanston-church-backend-backend-1",
+      "companyId": "evanston-church",
+      "role": "Backend Development",
+      "title": "Backend Mobile Developer",
+      "descrip": "Searching for a developer proficient in React Native (goal is to deploy to both iOS and Android efficiently). Ideal candidate will be familiar with React/React Native, TypeScript, JavaScript, React Hooks, and Redux.",
+      "prereqs": null,
+      "weeklyTime": "10+ Hours",
+      "languages": ["HTML", "JS", "CSS", "TypeScript"]
+    }
+  },
+  "nonprofits": {
+    "project-impact-180": {
+      "id": "project-impact-180",
+      "title": "Web Development for PI180 Website",
+      "company": "Project Impact 180",
+      "descrip": "We need help building our website",
+      "industry": "Community Leadership",
+      "url": "https://www.facebook.com/ProjectImpact180/",
+      "logo": "https://scontent.fdpa1-1.fna.fbcdn.net/v/t1.6435-9/86807013_111974643722545_1272070550302228480_n.png?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=AaNPh3GBwIMAX8pCo24&_nc_ht=scontent.fdpa1-1.fna&oh=8783917f4e282e940565a8ed0f8c2a72&oe=60A3327A",
+      "length": "3+ Months"
+    },
+    "we-all-code": {
+      "id": "we-all-code",
+      "title": "Update Ongoing Classes",
+      "company": "We All Code",
+      "descrip": "Help us maintain our weekly classes by integrating the information from our schedule into the website each week",
+      "industry": "Education",
+      "url": "https://www.weallcode.org/",
+      "logo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F131925775%2F93310981415%2F1%2Foriginal.20210324-154546?w=1000&auto=format%2Ccompress&q=75&sharp=10&rect=234%2C0%2C1490%2C745&s=651bac36a9695beabcdf528fdd3321d5",
+      "length": "3+ Months"
+    },
+    "evanston-church": {
+      "id": "evanston-church",
+      "title": "Scholarship/Career Search",
+      "company": "Evanston Church",
+      "descrip": "Help us build a platform to match our students with scholarships to apply for",
+      "industry": "Religion",
+      "url": "https://www.evanstonchurchofgod.org/",
+      "logo": "https://yt3.ggpht.com/ytc/AAUvwnhxZL0sPHcMNARADdd0O-oTGn-qcIvbrCXucz7n=s900-c-k-c0x00ffffff-no-rj",
+      "length": "One Month or Shorter"
+    }
+  }
+}
+

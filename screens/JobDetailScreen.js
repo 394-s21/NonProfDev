@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   SafeAreaView,
   StyleSheet,
@@ -8,7 +8,6 @@ import {
   Image,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import { nonProfsData } from '../utils/nonProfData'
 
 const Field = ({ label, value }) => {
   return (
@@ -37,14 +36,15 @@ const companyProps = {
 }
 
 const JobDetailScreen = ({ route, navigation }) => {
+  const job = route.params.job
+  const nonProfit = route.params.nonProfit
+
+  console.log('job: ', job)
+  console.log('nonProfit: ', nonProfit)
+
   const view = (nonprof) => {
     navigation.navigate('NonprofContactInfoScreen', { nonprof })
   }
-
-  const job = route.params.job
-  const nonprof = nonProfsData.nonprofits.filter(
-    (obj) => obj.id === job.companyId
-  )[0]
 
   return (
     <SafeAreaView style={styles.container}>
@@ -64,10 +64,10 @@ const JobDetailScreen = ({ route, navigation }) => {
             {key === 'logo' ? (
               <Image
                 style={styles.developerImage}
-                source={{ uri: nonprof['logo'] }}
+                source={{ uri: nonProfit.logo }}
               />
             ) : (
-              <Field key={i} label={companyProps[key]} value={nonprof[key]} />
+              <Field key={i} label={companyProps[key]} value={nonProfit[key]} />
             )}
           </React.Fragment>
         ))}
@@ -75,7 +75,7 @@ const JobDetailScreen = ({ route, navigation }) => {
 
       <TouchableOpacity
         style={styles.connectButton}
-        onPress={() => view(nonprof)}
+        onPress={() => view(nonProfit)}
       >
         <Text style={styles.connectText}>Connect</Text>
       </TouchableOpacity>
