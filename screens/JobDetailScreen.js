@@ -54,7 +54,13 @@ const JobDetailScreen = ({ route, navigation }) => {
       <ScrollView>
         {Object.keys(jobProps).map(
           (key, i) =>
-            job[key] && <Field key={i} label={jobProps[key]} value={job[key]} />
+            job[key] && (
+              <Field
+                key={i}
+                label={jobProps[key]}
+                value={Array.isArray(job[key]) ? job[key].join(', ') : job[key]}
+              />
+            )
         )}
         <Text label="Name" style={styles.name}>
           About the non-profit
