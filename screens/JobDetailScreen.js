@@ -27,14 +27,13 @@ const jobProps = {
 }
 
 const companyProps = {
-  logo: "Logo",
+  logo: 'Logo',
   company: 'Name',
   title: 'Project',
   descrip: 'Description',
   industry: 'Industry',
   length: 'Project Duration',
   url: 'URL',
-  
 }
 
 const JobDetailScreen = ({ route, navigation }) => {
@@ -54,23 +53,24 @@ const JobDetailScreen = ({ route, navigation }) => {
       </Text>
       <ScrollView>
         {Object.keys(jobProps).map(
-          (key) =>
-            job[key] && (
-              <Field key={key} label={jobProps[key]} value={job[key]} />
-            )
+          (key, i) =>
+            job[key] && <Field key={i} label={jobProps[key]} value={job[key]} />
         )}
         <Text label="Name" style={styles.name}>
           About the non-profit
         </Text>
-        {Object.keys(companyProps).map(
-          (key) => 
-          (<React.Fragment> 
-            {key==="logo" ? 
-            (<Image style={styles.developerImage} source={{ uri: nonprof["logo"]}} />):
-            <Field key={key} label={companyProps[key]} value={nonprof[key]} />}
-            </React.Fragment>)
-            
-        )}
+        {Object.keys(companyProps).map((key, i) => (
+          <React.Fragment>
+            {key === 'logo' ? (
+              <Image
+                style={styles.developerImage}
+                source={{ uri: nonprof['logo'] }}
+              />
+            ) : (
+              <Field key={i} label={companyProps[key]} value={nonprof[key]} />
+            )}
+          </React.Fragment>
+        ))}
       </ScrollView>
 
       <TouchableOpacity
