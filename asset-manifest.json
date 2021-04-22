@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/NonProfDev/static/js/app.ee6095f8.chunk.js",
-    "app.js.map": "/NonProfDev/static/js/app.ee6095f8.chunk.js.map",
+    "app.js": "/NonProfDev/static/js/app.9499c133.chunk.js",
+    "app.js.map": "/NonProfDev/static/js/app.9499c133.chunk.js.map",
     "runtime~app.js": "/NonProfDev/static/js/runtime~app.6015b140.js",
     "runtime~app.js.map": "/NonProfDev/static/js/runtime~app.6015b140.js.map",
-    "static/js/2.d784ea94.chunk.js": "/NonProfDev/static/js/2.d784ea94.chunk.js",
-    "static/js/2.d784ea94.chunk.js.map": "/NonProfDev/static/js/2.d784ea94.chunk.js.map",
+    "static/js/2.565e9aec.chunk.js": "/NonProfDev/static/js/2.565e9aec.chunk.js",
+    "static/js/2.565e9aec.chunk.js.map": "/NonProfDev/static/js/2.565e9aec.chunk.js.map",
     "fonts/AntDesign.ttf": "/NonProfDev/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/NonProfDev/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/NonProfDev/./fonts/Feather.ttf",
@@ -24,7 +24,7 @@
     "index.html": "/NonProfDev/index.html",
     "manifest.json": "/NonProfDev/manifest.json",
     "serve.json": "/NonProfDev/serve.json",
-    "static/js/2.d784ea94.chunk.js.LICENSE.txt": "/NonProfDev/static/js/2.d784ea94.chunk.js.LICENSE.txt",
+    "static/js/2.565e9aec.chunk.js.LICENSE.txt": "/NonProfDev/static/js/2.565e9aec.chunk.js.LICENSE.txt",
     "static/media/bell.png": "/NonProfDev/static/media/bell.cf04af27.png",
     "static/media/heart.png": "/NonProfDev/static/media/heart.23b5c2c0.png",
     "static/media/rocket.png": "/NonProfDev/static/media/rocket.d2f3bf41.png",
@@ -32,7 +32,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.6015b140.js",
-    "static/js/2.d784ea94.chunk.js",
-    "static/js/app.ee6095f8.chunk.js"
+    "static/js/2.565e9aec.chunk.js",
+    "static/js/app.9499c133.chunk.js"
   ]
 }
