@@ -1,22 +1,30 @@
-import React, { useState } from 'react'
-import { SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
 import { SearchBar } from 'react-native-elements'
 import DeveloperList from '../components/DeveloperList'
-import { data } from '../utils/data'
+import { firebase } from '../firebase'
 import { getFuse } from '../utils/search'
-
-const Banner = ({ title }) => (
-  <Text style={styles.bannerStyle}>{title || '[loading...]'}</Text>
-)
 
 const SearchScreen = ({ navigation }) => {
   const [search, updateSearch] = useState('')
-
-  // Currently hardcoded data
-  const [developers, setDevelopers] = useState(data.developers)
-
+  const [developers, setDevelopers] = useState([])
   // Filtered list of developers
   const [developersShown, setDevelopersShown] = useState(developers)
+
+  useEffect(() => {
+    const db = firebase.database().ref('developers')
+    const handleData = (snap) => {
+      if (snap.val()) {
+        const val = snap.val()
+        const developersList = Object.values(val)
+        console.log(developersList)
+        setDevelopers(developersList)
+        setDevelopersShown(developersList)
+      }
+    }
+    db.on('value', handleData, (error) => console.log(error))
+    return () => db.off('value', handleData)
+  }, [])
 
   // Hacky search with fuse.js
   const fuse = getFuse(developers)

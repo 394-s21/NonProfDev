@@ -18,7 +18,6 @@ const JobDisplayScreen = ({ route, navigation }) => {
         const jobsList = Object.values(val.jobs)
         setJobs(jobsList)
         setNonProfits(val.nonprofits)
-        console.log('val.nonprofits: ', val.nonprofits)
       }
     }
     db.on('value', handleData, (error) => console.log(error))

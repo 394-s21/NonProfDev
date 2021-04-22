@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react'
+import React from 'react'
 import {
   StyleSheet,
   Text,
@@ -13,14 +13,6 @@ const Job = ({ job, view, matched, nonProfit }) => {
     const width = Dimensions.get('window').width
     return width > 500 ? 16 : 12
   }
-
-  const companyParser = (id) => {
-    return id in nonProfits ? nonProfits[id].company : id
-  }
-
-  //const industryParser = (companyInt) => {
-  //return nonProfsData.nonprofits[companyInt].industry
-  //}
 
   return (
     <TouchableOpacity
