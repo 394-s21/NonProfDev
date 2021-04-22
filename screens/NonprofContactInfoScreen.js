@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Form from '../components/Form'
 
@@ -18,7 +24,6 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
   
   Best,
   ____________`
-  
 
   const view = () => {
     setMessageSent(true)
@@ -38,16 +43,18 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
 
       {messageSent ? (
         <View>
-        <Text label="Name" style={styles.name}>
-          Message succesfully sent to {nonprofName}!
-        </Text>
-        <TouchableOpacity style={styles.connectButton} 
-                          onPress={() => {
-                            view();
-                            headOut()
-                          }}>
+          <Text label="Name" style={styles.name}>
+            Message succesfully sent to {nonprofName}!
+          </Text>
+          <TouchableOpacity
+            style={styles.connectButton}
+            onPress={() => {
+              view()
+              headOut()
+            }}
+          >
             <Text style={styles.connectText}>Return to Non-Profit List</Text>
-        </TouchableOpacity>
+          </TouchableOpacity>
         </View>
       ) : (
         <ScrollView>

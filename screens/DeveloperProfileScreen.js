@@ -27,27 +27,18 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
   const developer = route.params.developer
   return (
     <SafeAreaView style={styles.container}>
-      
       <Image style={styles.developerImage} source={{ uri: developer.pic }} />
       <Text label="Name" style={styles.developerName}>
         {' '}
         {developer.name}{' '}
       </Text>
       <ScrollView>
-        <Text style={styles.developerLocation}> 
-          {developer.location} 
-        </Text>
-        <Text style={styles.developerRole}>
-          {developer.role}
-        </Text>
+        <Text style={styles.developerLocation}>{developer.location}</Text>
+        <Text style={styles.developerRole}>{developer.role}</Text>
         {/* <Text style={styles.developerBio}>
           {developer.Bio}
         </Text> */}
-        <Field
-          label="Bio"
-          value={developer.Bio}
-          style={styles.developerBio}
-        />
+        <Field label="Bio" value={developer.Bio} style={styles.developerBio} />
         <Field
           label="Skills"
           value={developer.skills.join(', ')}
@@ -81,37 +72,41 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
   )
 }
 
-const weeklyTimes = ["Less Than 5 Hours Per Week", "5-10 Hours Per Week", "10+ Hours Per Week"]
+const weeklyTimes = [
+  'Less Than 5 Hours Per Week',
+  '5-10 Hours Per Week',
+  '10+ Hours Per Week',
+]
 
-const mapWeeklyTime = (devTime) =>  {
-  var returnArr = [];
-  for (var i=0; i < devTime.length; i++) {
+const mapWeeklyTime = (devTime) => {
+  var returnArr = []
+  for (var i = 0; i < devTime.length; i++) {
     returnArr.push(weeklyTimes[devTime[i]])
   }
-  
-  return returnArr;
+
+  return returnArr
 }
 
-const projectLengths = ["Less Than 1 Month", "1-3 Months", "3+ Months"]
+const projectLengths = ['Less Than 1 Month', '1-3 Months', '3+ Months']
 
-const mapProjectLength = (projTime) =>  {
-  var returnArr = [];
-  for (var i=0; i < projTime.length; i++) {
+const mapProjectLength = (projTime) => {
+  var returnArr = []
+  for (var i = 0; i < projTime.length; i++) {
     returnArr.push(projectLengths[projTime[i]])
   }
-  
-  return returnArr;
+
+  return returnArr
 }
 
-const teamSizes = ["Solo", "2-3 Member Team", "3+ Member Team"]
+const teamSizes = ['Solo', '2-3 Member Team', '3+ Member Team']
 
-const mapTeamSize = (teamSize) =>  {
-  var returnArr = [];
-  for (var i=0; i < teamSize.length; i++) {
+const mapTeamSize = (teamSize) => {
+  var returnArr = []
+  for (var i = 0; i < teamSize.length; i++) {
     returnArr.push(teamSizes[teamSize[i]])
   }
-  
-  return returnArr;
+
+  return returnArr
 }
 
 const styles = StyleSheet.create({

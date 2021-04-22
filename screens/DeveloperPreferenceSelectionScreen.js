@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import PreferenceGroup from '../components/PreferenceGroup'
-import { ScrollView, /*TouchableOpacity*/ } from 'react-native-gesture-handler'
+import { ScrollView /*TouchableOpacity*/ } from 'react-native-gesture-handler'
 
 // Preference data hardcoded for now, substitute for db call later
 const preferenceData = [
@@ -38,7 +38,6 @@ const preferenceData = [
     title: 'Team Size',
     options: ['Solo', '2-3 Member Team', '3+ Member Team'],
   },
-
 ]
 
 /**
@@ -81,7 +80,9 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Text style={styles.h1_text}>Please select one or more preferences for each of the following:</Text>
+        <Text style={styles.h1_text}>
+          Please select one or more preferences for each of the following:
+        </Text>
         {preferenceData.map((v, i) => (
           <PreferenceGroup
             key={i}
@@ -102,12 +103,13 @@ const DeveloperPreferenceSelectionScreen = ({ navigation }) => {
             }}
           /> */}
           <TouchableOpacity
-            style={styles.roleButton} 
+            style={styles.roleButton}
             onPress={() => {
               const preferences = getPreferences(preferenceData, selections)
               navigation.navigate('JobListScreen', { preferences })
-            }}>
-              <Text style={styles.submitButtonText}>Submit Preferences</Text>
+            }}
+          >
+            <Text style={styles.submitButtonText}>Submit Preferences</Text>
           </TouchableOpacity>
         </View>
 
