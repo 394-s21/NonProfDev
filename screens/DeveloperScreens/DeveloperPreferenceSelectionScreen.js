@@ -8,7 +8,7 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native'
-import PreferenceGroup from '../components/PreferenceGroup'
+import PreferenceGroup from '../../components/PreferenceGroup'
 import { ScrollView /*TouchableOpacity*/ } from 'react-native-gesture-handler'
 
 // Preference data hardcoded for now, substitute for db call later

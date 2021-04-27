@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Form from '../components/Form'
+import Form from '../../components/Form'
 
 const NonprofContactInfoScreen = ({ route, navigation }) => {
   const [messageSent, setMessageSent] = useState(false)

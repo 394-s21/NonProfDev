@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
-import JobList from '../components/JobList'
-import { firebase } from '../firebase'
-import JobListContext from '../contexts/JobListContext'
+import JobList from '../../components/JobList'
+import { firebase } from '../../firebase'
+import JobListContext from '../../contexts/JobListContext'
 
 const JobDisplayScreen = ({ route, navigation }) => {
   const preferences = route.params.preferences

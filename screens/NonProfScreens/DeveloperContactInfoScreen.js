@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Form from '../components/Form'
+import Form from '../../components/Form'
 
 const Field = ({ label, value }) => {
   return (

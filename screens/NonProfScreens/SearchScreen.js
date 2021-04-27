@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
 import { SearchBar } from 'react-native-elements'
-import DeveloperList from '../components/DeveloperList'
-import { firebase } from '../firebase'
-import { getFuse } from '../utils/search'
+import DeveloperList from '../../components/DeveloperList'
+import { firebase } from '../../firebase'
+import { getFuse } from '../../utils/search'
 
 const SearchScreen = ({ navigation }) => {
   const [search, updateSearch] = useState('')

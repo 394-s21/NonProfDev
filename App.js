@@ -2,15 +2,14 @@ import 'react-native-gesture-handler'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
-import SearchScreen from './screens/SearchScreen'
-import AboutScreen from './screens/AboutScreen'
-import DeveloperProfileScreen from './screens/DeveloperProfileScreen'
+import SearchScreen from './screens/NonProfScreens/SearchScreen'
+import DeveloperProfileScreen from './screens/DeveloperScreens/DeveloperProfileScreen'
 import ChooseAppViewScreen from './screens/ChooseAppViewScreen'
-import DeveloperPreferenceSelectionScreen from './screens/DeveloperPreferenceSelectionScreen'
-import DeveloperContactInfoScreen from './screens/DeveloperContactInfoScreen'
-import JobListScreen from './screens/JobListScreen'
-import JobDetailScreen from './screens/JobDetailScreen'
-import NonprofContactInfoScreen from './screens/NonprofContactInfoScreen'
+import DeveloperPreferenceSelectionScreen from './screens/DeveloperScreens/DeveloperPreferenceSelectionScreen'
+import DeveloperContactInfoScreen from './screens/NonProfScreens/DeveloperContactInfoScreen'
+import JobListScreen from './screens/DeveloperScreens/JobListScreen'
+import JobDetailScreen from './screens/DeveloperScreens/JobDetailScreen'
+import NonprofContactInfoScreen from './screens/DeveloperScreens/NonprofContactInfoScreen'
 
 const Stack = createStackNavigator()
 
@@ -53,11 +52,7 @@ export default function App() {
           component={DeveloperProfileScreen}
           options={{ title: 'Developer Profile' }}
         />
-        <Stack.Screen
-          name="AboutScreen"
-          component={AboutScreen}
-          options={{ title: 'About' }}
-        />
+
         <Stack.Screen
           name="DeveloperContactInfoScreen"
           component={DeveloperContactInfoScreen}
