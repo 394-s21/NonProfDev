@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/NonProfDev/static/js/app.7812eaf4.chunk.js",
-    "app.js.map": "/NonProfDev/static/js/app.7812eaf4.chunk.js.map",
+    "app.js": "/NonProfDev/static/js/app.a289cc23.chunk.js",
+    "app.js.map": "/NonProfDev/static/js/app.a289cc23.chunk.js.map",
     "runtime~app.js": "/NonProfDev/static/js/runtime~app.6015b140.js",
     "runtime~app.js.map": "/NonProfDev/static/js/runtime~app.6015b140.js.map",
     "static/js/2.e286d60c.chunk.js": "/NonProfDev/static/js/2.e286d60c.chunk.js",
@@ -33,6 +33,6 @@
   "entrypoints": [
     "static/js/runtime~app.6015b140.js",
     "static/js/2.e286d60c.chunk.js",
-    "static/js/app.7812eaf4.chunk.js"
+    "static/js/app.a289cc23.chunk.js"
   ]
 }
