@@ -39,33 +39,38 @@ const JobDisplayScreen = ({ route, navigation }) => {
     ]
 
     const numMatches = matches.filter((match) => match).length
-    return numMatches > 0
+    return numMatches
   }
 
   const getOrderedJobs = (jobs) => {
-    const matchedJobs = []
-    const otherJobs = []
+    // const matchedJobs = []
+    // const otherJobs = []
 
+    let nGoodMatches = 0
     jobs.map((job) => {
-      if (isMatchBasic(job) && matchedJobs.length < 0.5 * jobs.length) {
-        // Use the basic matching algorithm for now
-        matchedJobs.push(job)
-      } else {
-        otherJobs.push(job)
+      // if (isMatchBasic(job) > 0 && matchedJobs.length < 0.5 * jobs.length) {
+      //   // Use the basic matching algorithm for now
+      //   matchedJobs.push(job)
+      // } else {
+      //   otherJobs.push(job)
+      // }
+      job.rank = isMatchBasic(job)
+      if (job.rank > 0) {
+        nGoodMatches++
       }
     })
 
-    const orderedJobs = matchedJobs.concat(otherJobs)
+    const orderedJobs = jobs.sort((a, b) => a.rank > b.rank)
 
-    const matchMask = new Array(jobs.length)
-    let i = 0
-    for (i; i < matchedJobs.length; i++) {
-      matchMask[i] = true
-    }
-    for (i; i < jobs.length; i++) {
-      matchMask[i] = false
-    }
-    return [orderedJobs, matchMask]
+    // const matchMask = new Array(jobs.length)
+    // let i = 0
+    // for (i; i < nGoodMatches; i++) {
+    //   matchMask[i] = true
+    // }
+    // for (i; i < jobs.length; i++) {
+    //   matchMask[i] = false
+    // }
+    return [orderedJobs, nGoodMatches]
   }
 
   // View job detail
@@ -77,12 +82,12 @@ const JobDisplayScreen = ({ route, navigation }) => {
   }
 
   const renderJobList = () => {
-    const [orderedJobs, matchMask] = getOrderedJobs(jobs)
+    const [orderedJobs, nGoodMatches] = getOrderedJobs(jobs)
     return (
       <JobList
         jobs={orderedJobs}
         view={view}
-        matched={matchMask}
+        nMatched={nGoodMatches}
         nonProfits={nonProfits}
       />
     )

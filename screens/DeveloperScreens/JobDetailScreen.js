@@ -77,8 +77,10 @@ const JobDetailScreen = ({ route, navigation }) => {
             )}
           </React.Fragment>
         ))}
-        <Text style={{color: 'blue'}}
-          onPress={() => Linking.openURL(nonProfit.url)}>
+        <Text
+          style={{ color: 'blue' }}
+          onPress={() => Linking.openURL(nonProfit.url)}
+        >
           Visit Our Website!
         </Text>
       </ScrollView>

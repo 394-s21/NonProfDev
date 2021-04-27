@@ -30,7 +30,7 @@ export default function App() {
         <Stack.Screen
           name="JobListScreen"
           component={JobListScreen}
-          options={{ title: 'Matched Jobs' }}
+          options={{ title: 'Available Jobs' }}
         />
         <Stack.Screen
           name="JobDetailScreen"
