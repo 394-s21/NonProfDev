@@ -49,7 +49,7 @@ const RegisterScreen = ({ navigation }) => {
   }
 
   async function handleOnSubmit(values) {
-    return values.confirm ? handleOnSignUp(values) : handleOnLogin(values)
+    return values.confirmPassword ? handleOnSignUp(values) : handleOnLogin(values)
   }
 
   return (
@@ -59,7 +59,7 @@ const RegisterScreen = ({ navigation }) => {
           initialValues={{
             email: '',
             password: '',
-            confirm: '',
+            confirmPassword: '',
           }}
           validationSchema={validationSchema}
           onSubmit={handleOnSubmit}
@@ -91,7 +91,7 @@ const RegisterScreen = ({ navigation }) => {
             textContentType="password"
           />
           <Form.Button
-            title={(values) => (values.confirm ? 'Register' : 'Login')}
+            title={(values) => (values.confirmPassword ? 'Register' : 'Login')}
           />
           {<Form.ErrorMessage error={signInError} visible={true} />}
         </Form>

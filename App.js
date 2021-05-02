@@ -47,12 +47,12 @@ export default function App() {
     user && user.uid ? (
       <Button
         title="Logout"
-        color="#448aff"
+        color="#f28888"
         onPress={() => firebase.auth().signOut()}
       />
     ) : (
       <Button
-        title="SignIn"
+        title="Sign In"
         color="#448aff"
         onPress={() => navigation.navigate('RegisterScreen')}
       />
