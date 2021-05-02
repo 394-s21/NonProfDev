@@ -1,5 +1,6 @@
 import React from 'react'
 import { ScrollView, Text, StyleSheet } from 'react-native'
+import { bool } from 'yup'
 import Job from './Job'
 
 const JobList = ({ jobs, view, nMatched, nonProfits }) => {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     fontSize: 20,
-    fontWeight: 550,
+    fontWeight: 'bold',
   },
 })
 
