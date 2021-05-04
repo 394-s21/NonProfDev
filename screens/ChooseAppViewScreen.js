@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-
   h1_text: {
     fontSize: 48,
     marginBottom: 25,
