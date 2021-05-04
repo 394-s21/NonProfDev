@@ -15,6 +15,7 @@ import UserContext from './contexts/UserContext'
 import { Button } from 'react-native'
 import { firebase } from './firebase'
 import NonProfHomeScreen from './screens/NonProfScreens/NonProfHomeScreen'
+import DeveloperCreateJobScreen from './screens/NonProfScreens/DeveloperCreateJobScreen'
 
 const Stack = createStackNavigator()
 
