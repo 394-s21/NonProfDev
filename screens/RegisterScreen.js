@@ -31,7 +31,7 @@ const RegisterScreen = ({ route, navigation }) => {
       ? 
       navigation.navigate('DeveloperPreferenceSelectionScreen')
       :
-      navigation.navigate('SearchScreen')
+      navigation.navigate('NonProfHomeScreen')
     } catch (error) {
       setSignInError(error.message)
     }

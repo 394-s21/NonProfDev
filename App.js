@@ -14,6 +14,7 @@ import RegisterScreen from './screens/registerScreen'
 import UserContext from './contexts/UserContext'
 import { Button } from 'react-native'
 import { firebase } from './firebase'
+import NonProfHomeScreen from './screens/NonProfScreens/NonProfHomeScreen'
 
 const Stack = createStackNavigator()
 
@@ -73,6 +74,11 @@ export default function App() {
               ),
               */
             })}
+          />
+          <Stack.Screen
+            name="NonProfHomeScreen"
+            component={NonProfHomeScreen}
+            options={{ title: 'NonProfit Home Screen' }}
           />
           <Stack.Screen
             name="DeveloperPreferenceSelectionScreen"
