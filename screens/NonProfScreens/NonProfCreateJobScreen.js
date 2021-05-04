@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   h1_text: {
     fontSize: 48,
     marginBottom: 25,
-    justifyContent: true,
+    justifyContent: 'center',
     textAlign: 'center'
   },
   field: {
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     padding: 15,
     marginLeft: 'auto',
     marginRight: 'auto',
-    justifyContent: true,
+    justifyContent: 'center',
     textAlign: 'center',
   },
   buttonText: {
