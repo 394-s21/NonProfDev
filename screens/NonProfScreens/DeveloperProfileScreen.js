@@ -19,11 +19,6 @@ const Field = ({ label, value }) => {
 }
 
 const DeveloperProfileScreen = ({ route, navigation }) => {
-  // View developer detail
-  const view = (developer) => {
-    navigation.navigate('DeveloperContactInfoScreen', { developer })
-  }
-
   const developer = route.params.developer
   return (
     <SafeAreaView style={styles.container}>
@@ -44,6 +39,11 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
           value={developer.skills.join(', ')}
           style={styles.developerSkills}
         />
+        <Field
+          label="Email"
+          value={developer.name.toLowerCase() + "@gmail.com"}
+          style={styles.developerSkills}
+        />
         <Text style={styles.headerText}> - Looking For - </Text>
         <Field
           label="Weekly Time Commitment"
@@ -61,13 +61,6 @@ const DeveloperProfileScreen = ({ route, navigation }) => {
           style={styles.developerSkills}
         />
       </ScrollView>
-
-      <TouchableOpacity
-        style={styles.connectButton}
-        onPress={() => view(developer)}
-      >
-        <Text style={styles.connectText}>Connect</Text>
-      </TouchableOpacity>
     </SafeAreaView>
   )
 }

@@ -6,7 +6,6 @@ import SearchScreen from './screens/NonProfScreens/SearchScreen'
 import DeveloperProfileScreen from './screens/NonProfScreens/DeveloperProfileScreen'
 import ChooseAppViewScreen from './screens/ChooseAppViewScreen'
 import DeveloperPreferenceSelectionScreen from './screens/DeveloperScreens/DeveloperPreferenceSelectionScreen'
-import DeveloperContactInfoScreen from './screens/NonProfScreens/DeveloperContactInfoScreen'
 import JobListScreen from './screens/DeveloperScreens/JobListScreen'
 import JobDetailScreen from './screens/DeveloperScreens/JobDetailScreen'
 import NonprofContactInfoScreen from './screens/DeveloperScreens/NonprofContactInfoScreen'
@@ -134,12 +133,6 @@ export default function App() {
             name="DeveloperProfileScreen"
             component={DeveloperProfileScreen}
             options={{ title: 'Developer Profile' }}
-          />
-
-          <Stack.Screen
-            name="DeveloperContactInfoScreen"
-            component={DeveloperContactInfoScreen}
-            options={{ title: 'Contact Developer' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
   h1_text: {
     fontSize: 48,
     marginBottom: 25,
+    textTransform: 'capitalize',
   },
   container: {
     flex: 1,
