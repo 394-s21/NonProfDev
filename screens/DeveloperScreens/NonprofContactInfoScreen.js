@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
+import {firebase} from '../../firebase';
 import { ScrollView } from 'react-native-gesture-handler'
 import Form from '../../components/Form'
 
@@ -30,7 +31,18 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
   }
 
   const nonprof = route.params.nonprof
+  console.log("nonprof:", nonprof);
   const nonprofName = nonprof.company
+
+  async function handleSubmit(values) {
+    console.log("message submitted", message);
+    const { message } = values;
+    firebase.database().ref('nonprofits').child(nonprof.id).child("messages").child('test').set(message).catch(error => {
+      setSubmitError(error.message);
+      console.log(error.message);
+    });
+    view();
+  }
 
   const placeholder = 'Enter message to ' + nonprofName
   return (
@@ -58,7 +70,8 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
         </View>
       ) : (
         <ScrollView>
-          <Form initialValues={{ message: letter }}>
+          <Form initialValues={{ message: letter }}
+                onSubmit={message => handleSubmit(message)}>
             <Form.Field
               name="message"
               leftIcon="inbox"
@@ -68,10 +81,8 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
               multiline={true}
               numberOfLines={20}
             />
+            <Form.Button title={'Send Message'} />
           </Form>
-          <TouchableOpacity style={styles.connectButton} onPress={() => view()}>
-            <Text style={styles.connectText}>Send Message</Text>
-          </TouchableOpacity>
         </ScrollView>
       )}
     </SafeAreaView>
