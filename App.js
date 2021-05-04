@@ -10,10 +10,12 @@ import DeveloperContactInfoScreen from './screens/NonProfScreens/DeveloperContac
 import JobListScreen from './screens/DeveloperScreens/JobListScreen'
 import JobDetailScreen from './screens/DeveloperScreens/JobDetailScreen'
 import NonprofContactInfoScreen from './screens/DeveloperScreens/NonprofContactInfoScreen'
-import RegisterScreen from './screens/registerScreen'
+import RegisterScreen from './screens/RegisterScreen'
 import UserContext from './contexts/UserContext'
 import { Button } from 'react-native'
 import { firebase } from './firebase'
+import DeveloperCreateJobScreen from './screens/NonProfScreens/DeveloperCreateJobScreen'
+
 
 const Stack = createStackNavigator()
 
@@ -57,6 +59,13 @@ export default function App() {
         onPress={() => navigation.navigate('RegisterScreen')}
       />
     )
+    const JobButton = ({ navigation}) => (
+      <Button
+        title="Sign In"
+        color="#448aff"
+        onPress={() => navigation.navigate('DeveloperCreateJobScreen')}
+      />
+    )
 
   return (
     <UserContext.Provider value={user}>
@@ -66,12 +75,12 @@ export default function App() {
             name="ChooseAppViewScreen"
             component={ChooseAppViewScreen}
             options={({ navigation }) => ({
-              title: 'NonProfDev'
-              /*
+              title: 'NonProfDev',
+              
               headerRight: () => (
-                <SignInButton navigation={navigation} user={user} />
+                <JobButton navigation={navigation} user={user} />
               ),
-              */
+              
             })}
           />
           <Stack.Screen
@@ -79,6 +88,12 @@ export default function App() {
             component={DeveloperPreferenceSelectionScreen}
             options={{ title: 'Preference Selection' }}
           />
+          <Stack.Screen
+            name="DeveloperCreateJobScreen"
+            component={DeveloperCreateJobScreen}
+            options={{ title: 'Create Job' }}
+          />
+
           <Stack.Screen
             name="JobListScreen"
             component={JobListScreen}
