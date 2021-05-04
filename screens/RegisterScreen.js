@@ -19,7 +19,7 @@ const validationSchema = Yup.object().shape({
   ),
 })
 
-const RegisterScreen = ({ navigation }) => {
+const RegisterScreen = ({ route, navigation }) => {
   const [signInError, setSignInError] = useState('')
 
   async function handleOnLogin(values) {
@@ -27,7 +27,11 @@ const RegisterScreen = ({ navigation }) => {
     setSignInError(null)
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password)
-      navigation.navigate('ChooseAppViewScreen')
+      route.params.roles.role === 'developer' 
+      ? 
+      navigation.navigate('DeveloperPreferenceSelectionScreen')
+      :
+      navigation.navigate('SearchScreen')
     } catch (error) {
       setSignInError(error.message)
     }
@@ -54,6 +58,7 @@ const RegisterScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.h1_text}>Welcome {route.params.roles.role}s!</Text>
       <ScrollView>
         <Form
           initialValues={{
@@ -101,6 +106,10 @@ const RegisterScreen = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+  h1_text: {
+    fontSize: 48,
+    marginBottom: 25,
+  },
   container: {
     flex: 1,
     alignItems: 'center',

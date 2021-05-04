@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   StatusBar,
   StyleSheet,
@@ -10,6 +10,8 @@ import {
 // Original home screen
 // Currently not used
 const ChooseAppViewScreen = ({ navigation }) => {
+  const [roles, setRoles] = useState({});
+
   return (
     <View style={styles.container}>
       <Text h1 style={styles.h1_text}>
@@ -25,9 +27,10 @@ const ChooseAppViewScreen = ({ navigation }) => {
       <View>
         <TouchableOpacity
           style={styles.roleButton}
-          onPress={() =>
-            navigation.navigate('DeveloperPreferenceSelectionScreen')
-          }
+          onPress={() => {
+            const roles = {role: 'developer'};
+            navigation.navigate('RegisterScreen', {roles});
+          }}
         >
           <Text style={styles.buttonText}>Developer</Text>
         </TouchableOpacity>
@@ -35,7 +38,10 @@ const ChooseAppViewScreen = ({ navigation }) => {
       <View>
         <TouchableOpacity
           style={styles.roleButton}
-          onPress={() => navigation.navigate('SearchScreen')}
+          onPress={() => {
+            const roles = {role: 'nonprofit'};
+            navigation.navigate('RegisterScreen', {roles});
+          }}
         >
           <Text style={styles.buttonText}>Non-Profit Organization</Text>
         </TouchableOpacity>
