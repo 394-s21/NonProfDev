@@ -13,7 +13,7 @@ import Form from "../../components/Form"
 
 
 
-const DeveloperCreateJobScreen = ({ navigation }) => {
+const NonProfCreateJobScreen = ({ navigation }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const view = (nonprof) => {
@@ -156,5 +156,5 @@ const styles = StyleSheet.create({
   },
 })
 
-export default DeveloperCreateJobScreen
+export default NonProfCreateJobScreen
 

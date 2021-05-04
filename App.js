@@ -16,7 +16,7 @@ import { Button } from 'react-native'
 import { firebase } from './firebase'
 import NonProfHomeScreen from './screens/NonProfScreens/NonProfHomeScreen'
 import ViewMessageScreen from './screens/NonProfScreens/ViewMessagesScreen'
-import DeveloperCreateJobScreen from './screens/NonProfScreens/DeveloperCreateJobScreen'
+import NonProfCreateJobScreen from './screens/NonProfScreens/NonProfCreateJobScreen'
 
 const Stack = createStackNavigator()
 
@@ -100,8 +100,8 @@ export default function App() {
             options={{ title: 'Preference Selection' }}
           />
           <Stack.Screen
-            name="DeveloperCreateJobScreen"
-            component={DeveloperCreateJobScreen}
+            name="NonProfCreateJobScreen"
+            component={NonProfCreateJobScreen}
             options={{ title: 'Create Job' }}
           />
 

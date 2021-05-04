@@ -34,10 +34,10 @@ const NonprofContactInfoScreen = ({ route, navigation }) => {
   console.log("nonprof:", nonprof);
   const nonprofName = nonprof.company
 
-  async function handleSubmit(values) {
+  async function handleSubmit(values) {    
     console.log("message submitted", message);
     const { message } = values;
-    firebase.database().ref('nonprofits').child(nonprof.id).child("messages").child('test').set(message).catch(error => {
+    firebase.database().ref('nonprofits').child(nonprof.id).child("messages").child(Date.now()).set(message).catch(error => {
       setSubmitError(error.message);
       console.log(error.message);
     });
