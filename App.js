@@ -10,11 +10,12 @@ import DeveloperContactInfoScreen from './screens/NonProfScreens/DeveloperContac
 import JobListScreen from './screens/DeveloperScreens/JobListScreen'
 import JobDetailScreen from './screens/DeveloperScreens/JobDetailScreen'
 import NonprofContactInfoScreen from './screens/DeveloperScreens/NonprofContactInfoScreen'
-import RegisterScreen from './screens/registerScreen'
+import RegisterScreen from './screens/RegisterScreen'
 import UserContext from './contexts/UserContext'
 import { Button } from 'react-native'
 import { firebase } from './firebase'
 import NonProfHomeScreen from './screens/NonProfScreens/NonProfHomeScreen'
+import ViewMessageScreen from './screens/NonProfScreens/ViewMessagesScreen'
 
 const Stack = createStackNavigator()
 
@@ -79,6 +80,11 @@ export default function App() {
             name="NonProfHomeScreen"
             component={NonProfHomeScreen}
             options={{ title: 'NonProfit Home Screen' }}
+          />
+          <Stack.Screen
+            name="ViewMessageScreen"
+            component={ViewMessageScreen}
+            options={{ title: 'Messages' }}
           />
           <Stack.Screen
             name="DeveloperPreferenceSelectionScreen"

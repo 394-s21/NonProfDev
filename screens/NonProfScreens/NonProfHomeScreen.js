@@ -14,7 +14,7 @@ const NonProfHomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       
       <Text h3 style={styles.h3_text}>
-      Welcome back to NonProfDev!
+      Welcome Back to NonProfDev!
       </Text>
       
      
@@ -37,7 +37,7 @@ const NonProfHomeScreen = ({ navigation }) => {
       
         <TouchableOpacity
           style={styles.roleButton}
-          onPress={() => navigation.navigate('SearchScreen')}
+          onPress={() => navigation.navigate('ViewMessageScreen')}
         >
           <Text style={styles.buttonText}>Messages</Text>
         </TouchableOpacity>
@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 30,
+    // justifyContent: 'center',
   },
 
   userContainer: {
