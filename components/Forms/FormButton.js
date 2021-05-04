@@ -28,9 +28,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   buttonText: {
-    color: Colors.white,
+    color: Colors.black,
     fontSize: 18,
     fontWeight: '600',
     textTransform: 'uppercase',
   },
+  
 })
