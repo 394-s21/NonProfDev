@@ -11,7 +11,7 @@ import JobDetailScreen from './screens/DeveloperScreens/JobDetailScreen'
 import NonprofContactInfoScreen from './screens/DeveloperScreens/NonprofContactInfoScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import UserContext from './contexts/UserContext'
-import { Button } from 'react-native'
+import { Button, Text, View } from 'react-native'
 import { firebase } from './firebase'
 import NonProfHomeScreen from './screens/NonProfScreens/NonProfHomeScreen'
 import ViewMessageScreen from './screens/NonProfScreens/ViewMessagesScreen'
@@ -45,28 +45,43 @@ export default function App() {
     })
   }, [])
 
-  const SignInButton = ({ navigation, user }) =>
-    user && user.uid ? (
-      <Button
-        title="Logout"
-        color="#f28888"
-        onPress={() => firebase.auth().signOut()}
-      />
-    ) : (
-      <Button
-        title="Sign In"
-        color="#448aff"
-        onPress={() => navigation.navigate('RegisterScreen')}
-      />
-    )
-    const JobButton = ({ navigation}) => (
-      <Button
-        title="Sign In"
-        color="#448aff"
-        onPress={() => navigation.navigate('DeveloperCreateJobScreen')}
-      />
-    )
+/*
+const SignInButton = ({ navigation, user }) =>
+  user && user.uid ? (
+    <Button
+      title="Logout"
+      color="#f28888"
+      onPress={() => {
+        firebase.auth().signOut()
+        alert('Successfully logged out!')
+        navigation.navigate('ChooseAppViewScreen')
+      }}
+    />
+  ) : (
+    <Button
+      title="Sign In"
+      color="#448aff"
+      onPress={() => {
+        alert('Please indicate whether you are a developer or nonprofit before logging in.')
+      }}
+    />
+  )
+*/
 
+const LogoutButton = ({ navigation }) => (
+  <View style={{marginRight: 10}}>
+     <Button
+      title="Logout"
+      color="#f28888"
+      onPress={() => {
+        firebase.auth().signOut()
+        navigation.navigate('ChooseAppViewScreen')
+        alert('Successfully logged out!')
+      }}
+    />
+  </View>
+)
+   
   return (
     <UserContext.Provider value={user}>
       <NavigationContainer>
@@ -74,65 +89,139 @@ export default function App() {
           <Stack.Screen
             name="ChooseAppViewScreen"
             component={ChooseAppViewScreen}
-            options={({ navigation }) => ({
-              title: 'NonProfDev',
-              
-              headerRight: () => (
-                <JobButton navigation={navigation} user={user} />
-              ),
-              
-            })}
+            options={({ title: 'NonProfDev' })}
           />
           <Stack.Screen
             name="NonProfHomeScreen"
             component={NonProfHomeScreen}
-            options={{ title: 'NonProfit Home Screen' }}
+            options={({ navigation }) => ({
+              title: 'NonProfit Home Screen',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
           <Stack.Screen
             name="ViewMessageScreen"
             component={ViewMessageScreen}
-            options={{ title: 'Messages' }}
+            options={({ navigation }) => ({
+              title: 'Messages',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
           <Stack.Screen
             name="DeveloperPreferenceSelectionScreen"
             component={DeveloperPreferenceSelectionScreen}
-            options={{ title: 'Preference Selection' }}
+            options={({ navigation }) => ({
+              title: 'Preference Selection',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
           <Stack.Screen
             name="NonProfCreateJobScreen"
             component={NonProfCreateJobScreen}
-            options={{ title: 'Create Job' }}
+            options={({ navigation }) => ({
+              title: 'Create Job',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
 
           <Stack.Screen
             name="JobListScreen"
             component={JobListScreen}
-            options={{ title: 'Available Jobs' }}
+            options={({ navigation }) => ({
+              title: 'Available Jobs',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
           <Stack.Screen
             name="RegisterScreen"
             component={RegisterScreen}
-            options={{ title: 'Register' }}
+            options={({title: 'Login/Register'})}
           />
           <Stack.Screen
             name="JobDetailScreen"
             component={JobDetailScreen}
-            options={{ title: 'Job Details' }}
+            options={({ navigation }) => ({
+              title: 'JobDetailScreen',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
           <Stack.Screen
             name="NonprofContactInfoScreen"
             component={NonprofContactInfoScreen}
-            options={{ title: 'Job Details' }}
+            options={({ navigation }) => ({
+              title: 'NonProfit Contact Info',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
           <Stack.Screen
             name="SearchScreen"
             component={SearchScreen}
-            options={{ title: 'NonProfDev' }}
+            options={({ navigation }) => ({
+              title: 'Developer Search',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
           <Stack.Screen
             name="DeveloperProfileScreen"
             component={DeveloperProfileScreen}
-            options={{ title: 'Developer Profile' }}
+            options={({ navigation }) => ({
+              title: 'Developer Profile',
+              headerRight: () => (
+                user
+                ?
+                <LogoutButton navigation={navigation} />
+                :
+                <Text />
+              ),
+            })}
           />
         </Stack.Navigator>
       </NavigationContainer>
