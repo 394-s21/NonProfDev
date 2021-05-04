@@ -30,7 +30,7 @@ const NonProfHomeScreen = ({ navigation }) => {
       
         <TouchableOpacity
           style={styles.roleButton}
-          onPress={() => navigation.navigate('SearchScreen')}
+          onPress={() => navigation.navigate('DeveloperCreateJobScreen')}
         >
           <Text style={styles.buttonText}>Post a New Listing</Text>
         </TouchableOpacity>

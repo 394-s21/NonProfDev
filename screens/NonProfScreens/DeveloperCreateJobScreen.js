@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,19 +14,17 @@ import Form from "../../components/Form"
 
 
 const DeveloperCreateJobScreen = ({ navigation }) => {
-//   const job = route.params.job
-//   const nonProfit = route.params.nonProfit
-
-//   console.log('job: ', job)
-//   console.log('nonProfit: ', nonProfit)
+  const [submitted, setSubmitted] = useState(false);
 
   const view = (nonprof) => {
     navigation.navigate('NonprofContactInfoScreen', { nonprof })
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text label="Name" style={styles.name}>
+      !submitted
+      ?
+      <SafeAreaView style={styles.container}>
+        <Text label="Name" style={styles.name}>
         Post a new Job!
       </Text>
       <ScrollView>
@@ -37,8 +35,9 @@ const DeveloperCreateJobScreen = ({ navigation }) => {
             weeklyTime: '',
             languages: '',
           }}
-          
-          onSubmit={console.log("hemcnmxh ")}
+          onSubmit={() => {
+            setSubmitted(true)
+          }}
         >
           <Form.Field
             name="role"
@@ -67,7 +66,17 @@ const DeveloperCreateJobScreen = ({ navigation }) => {
           />
         </Form>
       </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+      :
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.h1_text}>Job successfully created!</Text>
+        <TouchableOpacity
+          style={styles.roleButton}
+          onPress={() => navigation.navigate('NonProfHomeScreen')}
+        >
+          <Text style={styles.buttonText}>Return to Home Screen</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
   )
 }
 
@@ -78,6 +87,12 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     width: '90%',
+  },
+  h1_text: {
+    fontSize: 48,
+    marginBottom: 25,
+    justifyContent: true,
+    textAlign: 'center'
   },
   field: {
     padding: 5,
@@ -116,6 +131,21 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     // fontWeight: 500,
+  },
+  roleButton: {
+    backgroundColor: '#2196F3',
+    fontSize: 16,
+    width: 250,
+    padding: 15,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    justifyContent: true,
+    textAlign: 'center',
+  },
+  buttonText: {
+    fontSize: 20,
+    color: 'ghostwhite',
+    textAlign: 'center',
   },
   developerImage: {
     width: 200,
