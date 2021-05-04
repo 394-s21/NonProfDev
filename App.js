@@ -66,10 +66,12 @@ export default function App() {
             name="ChooseAppViewScreen"
             component={ChooseAppViewScreen}
             options={({ navigation }) => ({
-              title: 'NonProfDev',
+              title: 'NonProfDev'
+              /*
               headerRight: () => (
                 <SignInButton navigation={navigation} user={user} />
               ),
+              */
             })}
           />
           <Stack.Screen
